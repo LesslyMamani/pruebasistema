@@ -26,6 +26,8 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     // Route::get('/metricas', [MetricasController::class, 'index'])->name('metricas.index');
+    Route::get('/prueba', [MetricasController::class, 'prueba'])->name('prueba');
 });
+
 
 require __DIR__.'/auth.php';

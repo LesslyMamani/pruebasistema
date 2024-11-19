@@ -9,4 +9,7 @@ class MetricasController extends Controller
     public function index(){
         return view('metricas.index');
     }
+    public function prueba(){
+        return view('usuarios.index');
+    }
 }
