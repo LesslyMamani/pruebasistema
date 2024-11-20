@@ -12,9 +12,9 @@ class MetricasController extends Controller
     }
     public function prueba(){
 
-        $usuario = User::all();
+        $user = User::all();
 
-        return view('usuarios.index',compact('usuario'));
+        return view('usuarios.index',compact('user'));
 
 
     }
