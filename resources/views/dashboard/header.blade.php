@@ -20,75 +20,7 @@
                     <div class="nftmax-header__right">
                         <div class="nftmax-header__group">
                             <!-- Search Form -->
-                            <div class="nftmax-header__amount">
-                                <div class="nftmax-amount__icon"><img src="img/bag-icon.svg" alt="#">
-                                </div>
-                                <div class="nftmax-amount__digit"><span>$</span> 234,435.34</div>
-                                <div class="nftmax-header__plus"><a href="#"><img src="img/plus-icon.svg"
-                                            alt="#"></a></div>
-                                <!-- NFTMax Balance Hover -->
-                                <div class="nftmax-balance">
-                                    <h3 class="nftmax-balance__title">Your Balance</h3>
-                                    <!-- NFTMax Balance List -->
-                                    <ul class="nftmax-balance_list">
-                                        <li>
-                                            <div class="nftmax-balance-info">
-                                                <div class="nftmax-balance__img"><img src="img/wallet-1.png"
-                                                        alt="#"></div>
-                                                <h4 class="nftmax-balance-name">MetaMask</h4>
-                                            </div>
-                                            <div class="nftmax-balance-amount">
-                                                <h4 class="nftmax-balance-amount nftmax-scolor">hola
-                                                    <span class="nftmax-balance-usd">(773.69 USD)</span>
-                                                </h4>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="nftmax-balance-info">
-                                                <div class="nftmax-balance__img"><img src="img/wallet-2.png"
-                                                        alt="#"></div>
-                                                <h4 class="nftmax-balance-name">Coinbase Wallet</h4>
-                                            </div>
-                                            <div class="nftmax-balance-amount">
-                                                <h4 class="nftmax-balance-amount nftmax-scolor">56,124 ETH
-                                                    <span class="nftmax-balance-usd">(773.69 USD)</span>
-                                                </h4>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="nftmax-balance-info">
-                                                <div class="nftmax-balance__img"><img src="img/wallet-3.png"
-                                                        alt="#"></div>
-                                                <h4 class="nftmax-balance-name">Bitski</h4>
-                                            </div>
-                                            <div class="nftmax-balance-amount">
-                                                <h4 class="nftmax-balance-amount nftmax-scolor">56,124 ETH
-                                                    <span class="nftmax-balance-usd">(773.69 USD)</span>
-                                                </h4>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="nftmax-balance-info">
-                                                <div class="nftmax-balance__img"><img src="img/wallet-4.png"
-                                                        alt="#"></div>
-                                                <h4 class="nftmax-balance-name">WalletConnect</h4>
-                                            </div>
-                                            <div class="nftmax-balance-amount">
-                                                <h4 class="nftmax-balance-amount nftmax-scolor">43,728 ETH
-                                                    <span class="nftmax-balance-usd">(773.69 USD)</span>
-                                                </h4>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                    <!-- NFTMax Balance Button -->
-                                    <div class="nftmax-balance__button" data-bs-toggle="modal"
-                                        data-bs-target="#add_wallet"><a href="#"
-                                            class="nftmax-btn nftmax-btn__bordered bg radius">Add Money</a>
-                                    </div>
 
-                                </div>
-                                <!-- End NFTMax Balance Hover -->
-                            </div>
                             <!-- End Search Form -->
                             <div class="nftmax-header__group-two">
                                 <div class="nftmax-header__right">

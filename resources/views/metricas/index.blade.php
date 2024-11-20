@@ -8,119 +8,15 @@
                         <!-- Dashboard Inner -->
                         <div class="nftmax-dsinner">
                             <!-- Dashboard Slider -->
-                            <div class="dashboard-banner nftmax-bg-cover mg-top-40"
-                                style="background-image:url('img/banner-bg.png')">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="dashboard-banner__main">
-                                            <div class="dashboard-banner__column dashboard-banner__column--one">
-                                                <!-- Dashboard Content -->
-                                                <div class="dashboard-banner__content">
-                                                    <h2 class="dashboard-banner__title nftmax-font-regular nftmax-lspacing">
-                                                        Lock and Lob x Fiesta Spurs</h2>
-                                                    <p class="dashboard-banner__text nftmax-lspacing">ID : 2320382
-                                                    </p>
-                                                </div>
 
-                                                <div class="nftmax-header__author nftmax-header__author-two ">
-                                                    <div class="nftmax-header__author-img"><img src="img/profile-pic-2.png"
-                                                            alt="#"></div>
-                                                    <div class="nftmax-header__author-content ">
-                                                        <h4
-                                                            class="nftmax-header__author-title nftmax-header__author-title--two nftmax-lspacing">
-                                                            Brokln Simons</h4>
-                                                        <p
-                                                            class="nftmax-header__author-text nftmax-header__author-text--two">
-                                                            <a href="#"
-                                                                class="nftmax-font-regular nftmax-lspacing">@broklinslam_75</a>
-                                                        </p>
-                                                    </div>
-                                                </div>
-
-                                                <div class="dashboard-banner__bids">
-                                                    <div class="dashboard-banner__bid">
-                                                        <!-- Single Bid -->
-                                                        <div class="dashboard-banner__group">
-                                                            <p class="dashboard-banner__group-small">Current Bid
-                                                            </p>
-                                                            <h3 class="dashboard-banner__group-title">75,320 ETH
-                                                            </h3>
-                                                            <p class="dashboard-banner__group-small">773.69
-                                                                <span>USD</span>
-                                                            </p>
-                                                        </div>
-                                                        <!-- End Single Bid -->
-                                                        <div class="dashboard-banner__middle-border"></div>
-                                                        <!-- Single Bid -->
-                                                        <div class="dashboard-banner__group">
-                                                            <p class="dashboard-banner__group-small">Remaing Time
-                                                            </p>
-                                                            <h3 class="dashboard-banner__group-title"
-                                                                data-countdown="2023/12/26"></h3>
-                                                            <p class="dashboard-banner__group-small nftmax-timing">
-                                                                <span>Hrs</span> <span>Min</span> <span>Sec</span>
-                                                            </p>
-                                                        </div>
-                                                        <!-- End Single Bid -->
-                                                    </div>
-                                                </div>
-
-                                                <!-- Dashboard Banner Button -->
-                                                <div class="dashboard-banner__button">
-                                                    <div class="dashboard-banner__single-btn">
-                                                        <a class="dashboard-banner__heart"><i
-                                                                class="fa-solid fa-heart"></i></a>
-                                                    </div>
-                                                    <div class="dashboard-banner__single-btn dashboard-banner__main-btn">
-                                                        <a href="active-bids.html"
-                                                            class="nftmax-btn nftmax-btn__secondary radius">Place a
-                                                            Bid</a>
-                                                    </div>
-                                                    <div class="dashboard-banner__single-btn">
-                                                        <a href="marketplace.html" class="nftmax-btn trs-white">View Art
-                                                            Work</a>
-                                                    </div>
-                                                </div>
-                                                <!-- End Dashboard Banner Button -->
-                                            </div>
-                                            <div class="dashboard-banner__column dashboard-banner__column--two">
-                                                <div class="dashboard-banner__slider">
-                                                    <div class="dashboard-banner__single-slider">
-                                                        <img src="img/dashboard-slider-1.png" alt="#">
-                                                    </div>
-                                                    <div class="dashboard-banner__single-slider">
-                                                        <img src="img/slide_2.jpg" alt="#">
-                                                    </div>
-                                                    <div class="dashboard-banner__single-slider">
-                                                        <img src="img/slide_3.jpg" alt="#">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                             <!-- End Dashboard Slider -->
 
                             <!-- Welcome CTA -->
-                            <div class="welcome-cta mg-top-40">
-                                <div class="welcome-cta__heading">
-                                    <h2 class="welcome-cta__title">Create your own NFT and extraordinary get lot of
-                                        Sell..</h2>
-                                    <p class="welcome-cta__text nftmax-lspacing">Buy and sell NFTs from the world’s
-                                        top artists</p>
-                                </div>
-                                <div class="welcome-cta__button">
-                                    <a href="product-upload.html" class="nftmax-btn nftmax-btn__bordered bg radius">Upload
-                                        Products</a>
-                                    <a href="marketplace.html" class="nftmax-btn trs-white bl-color">View Art
-                                        Work</a>
-                                </div>
-                            </div>
+
                             <!-- End Welcome CTA -->
 
                             <!-- Trending Action -->
-                            <div class="trending-action mg-top-40">
+                            {{-- <div class="trending-action mg-top-40">
                                 <h2 class="trending-action__heading">Trending Action</h2>
                                 <div class="row">
                                     <div class="col-12">
@@ -434,10 +330,10 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
                             <!-- End Trending Action -->
 
-                            <div class="row nftmax-gap-30">
+                            {{-- <div class="row nftmax-gap-30">
                                 <div class="col-lg-6 col-md-6 col-12 nftmax-sixth-one">
                                     <!-- Charts One -->
                                     <div class="charts-main charts-home-one mg-top-40">
@@ -520,272 +416,15 @@
                                     </div>
                                     <!-- End Charts Two -->
                                 </div>
-                            </div>
+                            </div> --}}
 
-                            <div class="row nftmax-gap-30">
-                                <div class="col-lg-6 col-12 nftmax-sixth-one">
-                                    <div class="seller-list mg-top-40">
-                                        <h3 class="seller-list__heading">Top Seller</h3>
-                                        <div class="seller-list__slider">
-                                            <!-- Seller Single List -->
-                                            <div class="seller-list__single-slider">
-                                                <div class="seller-list__single">
-                                                    <!-- Seller Head -->
-                                                    <div class="seller-list__head">
-                                                        <div class="verfify-sign"><img src="img/verfify-sign.png"
-                                                                alt="#"></div>
-                                                        <img src="img/seller-1.png" alt="#">
-                                                    </div>
-                                                    <!-- Seller Body -->
-                                                    <div class="seller-list__body">
-                                                        <h4 class="sell-list__title"><a href="#">Brokln
-                                                                Simons</a></h4>
-                                                        <p class="sell-list__author"><a href="#">@broklinslam_75</a>
-                                                        </p>
-                                                        <div class="sell-list__item nftmax-scolor"><img
-                                                                src="img/diamond-icon.png" alt="#">3435
-                                                            Items</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- End Seller Single List -->
-                                            <!-- Seller Single List -->
-                                            <div class="seller-list__single-slider">
-                                                <div class="seller-list__single">
-                                                    <!-- Seller Head -->
-                                                    <div class="seller-list__head">
-                                                        <div class="verfify-sign"><img src="img/verfify-sign.png"
-                                                                alt="#"></div>
-                                                        <img src="img/seller-2.png" alt="#">
-                                                    </div>
-                                                    <!-- Seller Body -->
-                                                    <div class="seller-list__body">
-                                                        <h4 class="sell-list__title"><a href="#">Brokln
-                                                                Simons</a></h4>
-                                                        <p class="sell-list__author"><a href="#">@broklinslam_75</a>
-                                                        </p>
-                                                        <div class="sell-list__item nftmax-scolor"><img
-                                                                src="img/diamond-icon.png" alt="#">3435
-                                                            Items</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- End Seller Single List -->
-                                            <!-- Seller Single List -->
-                                            <div class="seller-list__single-slider">
-                                                <div class="seller-list__single">
-                                                    <!-- Seller Head -->
-                                                    <div class="seller-list__head">
-                                                        <div class="verfify-sign"><img src="img/verfify-sign.png"
-                                                                alt="#"></div>
-                                                        <img src="img/seller-3.png" alt="#">
-                                                    </div>
-                                                    <!-- Seller Body -->
-                                                    <div class="seller-list__body">
-                                                        <h4 class="sell-list__title"><a href="#">Brokln
-                                                                Simons</a></h4>
-                                                        <p class="sell-list__author"><a href="#">@broklinslam_75</a>
-                                                        </p>
-                                                        <div class="sell-list__item nftmax-scolor"><img
-                                                                src="img/diamond-icon.png" alt="#">3435
-                                                            Items</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- End Seller Single List -->
-                                            <!-- Seller Single List -->
-                                            <div class="seller-list__single-slider">
-                                                <div class="seller-list__single">
-                                                    <!-- Seller Head -->
-                                                    <div class="seller-list__head">
-                                                        <div class="verfify-sign"><img src="img/verfify-sign.png"
-                                                                alt="#"></div>
-                                                        <img src="img/seller-4.png" alt="#">
-                                                    </div>
-                                                    <!-- Seller Body -->
-                                                    <div class="seller-list__body">
-                                                        <h4 class="sell-list__title"><a href="#">Brokln
-                                                                Simons</a></h4>
-                                                        <p class="sell-list__author"><a href="#">@broklinslam_75</a>
-                                                        </p>
-                                                        <div class="sell-list__item nftmax-scolor"><img
-                                                                src="img/diamond-icon.png" alt="#">3435
-                                                            Items</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- End Seller Single List -->
-                                            <!-- Seller Single List -->
-                                            <div class="seller-list__single-slider">
-                                                <div class="seller-list__single">
-                                                    <!-- Seller Head -->
-                                                    <div class="seller-list__head">
-                                                        <div class="verfify-sign"><img src="img/verfify-sign.png"
-                                                                alt="#"></div>
-                                                        <img src="img/seller-1.png" alt="#">
-                                                    </div>
-                                                    <!-- Seller Body -->
-                                                    <div class="seller-list__body">
-                                                        <h4 class="sell-list__title"><a href="#">Brokln
-                                                                Simons</a></h4>
-                                                        <p class="sell-list__author"><a href="#">@broklinslam_75</a>
-                                                        </p>
-                                                        <div class="sell-list__item nftmax-scolor"><img
-                                                                src="img/diamond-icon.png" alt="#">3435
-                                                            Items</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- End Seller Single List -->
-                                        </div>
-                                    </div>
-                                </div>
 
-                                <div class="col-lg-6 col-12 nftmax-sixth-two">
-                                    <div class="seller-list mg-top-40">
-                                        <h3 class="seller-list__heading">Top Buyer</h3>
-                                        <div class="seller-list__slider">
-                                            <!-- Seller Single List -->
-                                            <div class="seller-list__single-slider">
-                                                <div class="seller-list__single">
-                                                    <!-- Seller Head -->
-                                                    <div class="seller-list__head">
-                                                        <div class="verfify-sign"><img src="img/verfify-sign.png"
-                                                                alt="#"></div>
-                                                        <img src="img/seller-1.png" alt="#">
-                                                    </div>
-                                                    <!-- Seller Body -->
-                                                    <div class="seller-list__body">
-                                                        <h4 class="sell-list__title"><a href="#">Brokln
-                                                                Simons</a></h4>
-                                                        <p class="sell-list__author"><a href="#">@broklinslam_75</a>
-                                                        </p>
-                                                        <div class="sell-list__item sell-list__v2 nftmax-pcolor">
-                                                            <img src="img/order-icon.png" alt="#">$78 M
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- End Seller Single List -->
-                                            <!-- Seller Single List -->
-                                            <div class="seller-list__single-slider">
-                                                <div class="seller-list__single">
-                                                    <!-- Seller Head -->
-                                                    <div class="seller-list__head">
-                                                        <div class="verfify-sign"><img src="img/verfify-sign.png"
-                                                                alt="#"></div>
-                                                        <img src="img/seller-2.png" alt="#">
-                                                    </div>
-                                                    <!-- Seller Body -->
-                                                    <div class="seller-list__body">
-                                                        <h4 class="sell-list__title"><a href="#">Brokln
-                                                                Simons</a></h4>
-                                                        <p class="sell-list__author"><a href="#">@broklinslam_75</a>
-                                                        </p>
-                                                        <div class="sell-list__item sell-list__v2 nftmax-pcolor">
-                                                            <img src="img/order-icon.png" alt="#">$78 M
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- End Seller Single List -->
-                                            <!-- Seller Single List -->
-                                            <div class="seller-list__single-slider">
-                                                <div class="seller-list__single">
-                                                    <!-- Seller Head -->
-                                                    <div class="seller-list__head">
-                                                        <div class="verfify-sign"><img src="img/verfify-sign.png"
-                                                                alt="#"></div>
-                                                        <img src="img/seller-3.png" alt="#">
-                                                    </div>
-                                                    <!-- Seller Body -->
-                                                    <div class="seller-list__body">
-                                                        <h4 class="sell-list__title"><a href="#">Brokln
-                                                                Simons</a></h4>
-                                                        <p class="sell-list__author"><a href="#">@broklinslam_75</a>
-                                                        </p>
-                                                        <div class="sell-list__item sell-list__v2 nftmax-pcolor">
-                                                            <img src="img/order-icon.png" alt="#">$78 M
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- End Seller Single List -->
-                                            <!-- Seller Single List -->
-                                            <div class="seller-list__single-slider">
-                                                <div class="seller-list__single">
-                                                    <!-- Seller Head -->
-                                                    <div class="seller-list__head">
-                                                        <div class="verfify-sign"><img src="img/verfify-sign.png"
-                                                                alt="#"></div>
-                                                        <img src="img/seller-4.png" alt="#">
-                                                    </div>
-                                                    <!-- Seller Body -->
-                                                    <div class="seller-list__body">
-                                                        <h4 class="sell-list__title"><a href="#">Brokln
-                                                                Simons</a></h4>
-                                                        <p class="sell-list__author"><a href="#">@broklinslam_75</a>
-                                                        </p>
-                                                        <div class="sell-list__item sell-list__v2 nftmax-pcolor">
-                                                            <img src="img/order-icon.png" alt="#">$78 M
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- End Seller Single List -->
-                                            <!-- Seller Single List -->
-                                            <div class="seller-list__single-slider">
-                                                <div class="seller-list__single">
-                                                    <!-- Seller Head -->
-                                                    <div class="seller-list__head">
-                                                        <div class="verfify-sign"><img src="img/verfify-sign.png"
-                                                                alt="#"></div>
-                                                        <img src="img/seller-1.png" alt="#">
-                                                    </div>
-                                                    <!-- Seller Body -->
-                                                    <div class="seller-list__body">
-                                                        <h4 class="sell-list__title"><a href="#">Brokln
-                                                                Simons</a></h4>
-                                                        <p class="sell-list__author"><a href="#">@broklinslam_75</a>
-                                                        </p>
-                                                        <div class="sell-list__item sell-list__v2 nftmax-pcolor">
-                                                            <img src="img/order-icon.png" alt="#">$78 M
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- End Seller Single List -->
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
 
                             <div class="nftmax-table mg-top-40">
                                 <div class="nftmax-table__heading">
                                     <h3 class="nftmax-table__title mb-0">All NFTS Update <span
                                             class="nftmax-table__badge">435</span></h3>
-                                    <ul class="nav nav-tabs  nftmax-dropdown__list" id="nav-tab" role="tablist">
-                                        <li class="nav-item dropdown ">
-                                            <a class="nftmax-sidebar_btn nftmax-heading__tabs nav-link dropdown-toggle"
-                                                data-bs-toggle="dropdown" href="#" role="button"
-                                                aria-expanded="false">All Categories <span
-                                                    class="nftmax-table__arrow--icon"><svg width="13" height="6"
-                                                        viewBox="0 0 13 6" fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg">
-                                                        <path opacity="0.7"
-                                                            d="M12.4124 0.247421C12.3327 0.169022 12.2379 0.106794 12.1335 0.0643287C12.0291 0.0218632 11.917 0 11.8039 0C11.6908 0 11.5787 0.0218632 11.4743 0.0643287C11.3699 0.106794 11.2751 0.169022 11.1954 0.247421L7.27012 4.07837C7.19045 4.15677 7.09566 4.219 6.99122 4.26146C6.88678 4.30393 6.77476 4.32579 6.66162 4.32579C6.54848 4.32579 6.43646 4.30393 6.33202 4.26146C6.22758 4.219 6.13279 4.15677 6.05312 4.07837L2.12785 0.247421C2.04818 0.169022 1.95338 0.106794 1.84895 0.0643287C1.74451 0.0218632 1.63249 0 1.51935 0C1.40621 0 1.29419 0.0218632 1.18975 0.0643287C1.08531 0.106794 0.990517 0.169022 0.910844 0.247421C0.751218 0.404141 0.661621 0.616141 0.661621 0.837119C0.661621 1.0581 0.751218 1.2701 0.910844 1.42682L4.84468 5.26613C5.32677 5.73605 5.98027 6 6.66162 6C7.34297 6 7.99647 5.73605 8.47856 5.26613L12.4124 1.42682C12.572 1.2701 12.6616 1.0581 12.6616 0.837119C12.6616 0.616141 12.572 0.404141 12.4124 0.247421Z"
-                                                            fill="#374557" fill-opacity="0.6"></path>
-                                                    </svg></span></a>
-                                            <ul class="dropdown-menu nftmax-sidebar_dropdown">
-                                                <a class="dropdown-item list-group-item" data-bs-toggle="tab"
-                                                    data-bs-target="#table_1" role="tab">Categories V1</a>
-                                                <a class="dropdown-item list-group-item" data-bs-toggle="tab"
-                                                    data-bs-target="#table_2" role="tab">Categories V2</a>
-                                                <a class="dropdown-item list-group-item" data-bs-toggle="tab"
-                                                    data-bs-target="#table_1" role="tab">Categories V3</a>
-                                            </ul>
-                                        </li>
-                                    </ul>
+
                                 </div>
                                 <div class="tab-content" id="myTabContent">
                                     <div class="tab-pane fade show active" id="table_1" role="tabpanel"
@@ -1476,26 +1115,7 @@
 
                             <div class="col-xxl-12 col-xl-6 col-12 nftmax-sidebar__widget">
                                 <!-- NFTMax Single Sidebar -->
-                                <div class="nftmax-sidebar__single">
-                                    <!-- Sidebar Heading -->
-                                    <div class="nftmax-sidebar__heading">
-                                        <h4 class="nftmax-sidebar__title">Top Flatform</h4>
-                                        <a href="#" class="nftmax-sidebar_btn">View All</a>
-                                    </div>
-                                    <!-- Platform List -->
-                                    <div class="nftmax-sidebar__platform">
-                                        <ul class="nftmax-sidebar__list">
-                                            <li><a href="#"><img src="img/platform-1.png"
-                                                        alt="#">OpenSea</a></li>
-                                            <li><a href="#"><img src="img/platform-2.png"
-                                                        alt="#">Rarible</a></li>
-                                            <li><a href="#"><img src="img/platform-3.png" alt="#">Myth
-                                                    Market</a></li>
-                                            <li><a href="#"><img src="img/platform-4.png"
-                                                        alt="#">KnownOrigin</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
+
                                 <!-- End NFTMax Single Sidebar -->
                             </div>
                         </div>
