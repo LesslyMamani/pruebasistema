@@ -90,7 +90,6 @@
                                 </div>
                                 <!-- End NFTMax Balance Hover -->
                             </div>
-
                             <!-- End Search Form -->
                             <div class="nftmax-header__group-two">
                                 <div class="nftmax-header__right">

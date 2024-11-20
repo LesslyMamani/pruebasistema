@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\areaController;
 use App\Http\Controllers\MetricasController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UsuarioController;
@@ -28,6 +29,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     // Route::get('/metricas', [MetricasController::class, 'index'])->name('metricas.index');
     Route::get('/prueba', [MetricasController::class, 'prueba'])->name('prueba');
+<<<<<<< HEAD
 
 
     // Listar usuarios
@@ -48,6 +50,14 @@ Route::post('/usuarios', [UsuarioController::class, 'store'])->name('usuarios.st
     // Eliminar usuario
     Route::delete('/usuarios/{id}', [UsuarioController::class, 'destroy'])->name('usuarios.destroy');
 
+=======
+    Route::get('/area', [areaController::class, 'index'])->name('area');
+    /* Route::put('/area/{area}', [AreaController::class, 'update'])->name('area.update');
+    Route::resource('area', AreaController::class)->except(['update']); */
+    Route::resource('area', AreaController::class);
+
+
+>>>>>>> ebb03aeffb18f18b28af92650ae526cafb74432e
 });
 
 

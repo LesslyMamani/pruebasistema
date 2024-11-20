@@ -68,6 +68,7 @@
             </div>
         </div>
     </section>
+
     <!-- Modal Crear Área -->
     <div class="modal fade" id="crearAreaModal" tabindex="-1" aria-labelledby="crearAreaModalLabel" aria-hidden="true">
         <div class="modal-dialog">
