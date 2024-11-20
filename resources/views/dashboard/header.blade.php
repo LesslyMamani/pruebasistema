@@ -38,7 +38,7 @@
                                                 <h4 class="nftmax-balance-name">MetaMask</h4>
                                             </div>
                                             <div class="nftmax-balance-amount">
-                                                <h4 class="nftmax-balance-amount nftmax-scolor">75,320 ETH
+                                                <h4 class="nftmax-balance-amount nftmax-scolor">hola
                                                     <span class="nftmax-balance-usd">(773.69 USD)</span>
                                                 </h4>
                                             </div>
