@@ -5,7 +5,8 @@ use App\Http\Controllers\MetricasController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UsuarioController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\cursoController;
+use App\Http\Controllers\expositorController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,6 +31,7 @@ Route::middleware('auth')->group(function () {
     // Route::get('/metricas', [MetricasController::class, 'index'])->name('metricas.index');
     Route::get('/prueba', [MetricasController::class, 'prueba'])->name('prueba');
 
+<<<<<<< HEAD
 
     // Listar usuarios
     Route::get('/usuarios', [UsuarioController::class, 'index'])->name('usuarios.index');
@@ -49,11 +51,16 @@ Route::post('/usuarios', [UsuarioController::class, 'store'])->name('usuarios.st
     // Eliminar usuario
     Route::delete('/usuarios/{id}', [UsuarioController::class, 'destroy'])->name('usuarios.destroy');
 
+=======
+>>>>>>> fed6d91edcee08eca14d456509a3e8c1587ebe24
     Route::get('/area', [areaController::class, 'index'])->name('area');
-    /* Route::put('/area/{area}', [AreaController::class, 'update'])->name('area.update');
-    Route::resource('area', AreaController::class)->except(['update']); */
     Route::resource('area', AreaController::class);
 
+    Route::resource('curso', cursoController::class);
+    Route::get('/curso', [cursoController::class, 'index'])->name('curso');
+
+    Route::resource('expositor', expositorController::class);
+    Route::get('/expositor', [expositorController::class, 'index'])->name('expositor');
 
 });
 
