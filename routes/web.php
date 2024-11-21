@@ -4,7 +4,8 @@ use App\Http\Controllers\areaController;
 use App\Http\Controllers\MetricasController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\cursoController;
+use App\Http\Controllers\expositorController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,11 +29,15 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     // Route::get('/metricas', [MetricasController::class, 'index'])->name('metricas.index');
     Route::get('/prueba', [MetricasController::class, 'prueba'])->name('prueba');
+
     Route::get('/area', [areaController::class, 'index'])->name('area');
-    /* Route::put('/area/{area}', [AreaController::class, 'update'])->name('area.update');
-    Route::resource('area', AreaController::class)->except(['update']); */
     Route::resource('area', AreaController::class);
 
+    Route::resource('curso', cursoController::class);
+    Route::get('/curso', [cursoController::class, 'index'])->name('curso');
+
+    Route::resource('expositor', expositorController::class);
+    Route::get('/expositor', [expositorController::class, 'index'])->name('expositor');
 
 });
 
