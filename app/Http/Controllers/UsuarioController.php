@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Usuario;
 use Illuminate\Http\Request;
-use PhpParser\Node\Stmt\TryCatch;
 
 class UsuarioController extends Controller
 {
@@ -29,36 +28,37 @@ class UsuarioController extends Controller
 
     // Crear un nuevo usuario
     public function create()
-
     {
-        $usuarios = Usuario::all();
-
         return view('usuarios.create');
     }
 
+    // Guardar un usuario
     public function store(Request $request)
     {
-
-        $errors = $request->validate([
+        $request->validate([
             'nombre_usuario' => 'required|string|unique:usuarios,nombre_usuario',
             'contrasena' => 'required|string',
-            'nombre' => 'required|string',
-            'apellido_p' => 'required|string',
-            'apellido_m' => 'required|string',
-            'carnet' => 'required|string',
+            'nombre' => 'required|regex:/^[a-zA-Z]+$/',
+            'apellido_p' => 'required|regex:/^[a-zA-Z]+$/',
+            'apellido_m' => 'required|regex:/^[a-zA-Z]+$/',
+            'ative' => 'required|in:1,0',
+            'carnet' => 'required|digits_between:1,50|unique:usuarios,carnet',
+            'correo' => 'nullable|email|unique:usuarios,correo',
+            'fecha_nac' => 'nullable|date',
+            'telefono' => 'nullable|string',
             'nombre_rol' => 'required|in:Admin,Usuario,Expositor',
             'nombre_area' => 'required|in:Docente,Administrativo,Externo,Estudiante',
         ]);
 
-        $usuario = Usuario::create($request->all());
         try {
-            return response()->json(['mensaje' => 'Usuario creado'], 201);
+            $usuario = Usuario::create($request->all());
+            return response()->json(['mensaje' => 'Usuario creado', 'usuario' => $usuario], 201);
         } catch (\Throwable $th) {
-            return response()->json(['mensaje' => 'Usuario no creado', 'errors'=>$errors],500);
+            return response()->json(['mensaje' => 'Error al crear usuario'], 500);
         }
-       
     }
-    // editar
+
+    // Editar usuario
     public function edit($id_usuario)
     {
         $usuario = Usuario::find($id_usuario);
@@ -82,10 +82,13 @@ class UsuarioController extends Controller
         $request->validate([
             'nombre_usuario' => 'string|unique:usuarios,nombre_usuario,' . $id_usuario . ',id_usuario',
             'contrasena' => 'string',
-            'nombre' => 'string',
-            'apellido_p' => 'string',
-            'apellido_m' => 'string',
-            'carnet' => 'string',
+            'nombre' => 'string|regex:/^[a-zA-Z]+$/',
+            'apellido_p' => 'string|regex:/^[a-zA-Z]+$/',
+            'apellido_m' => 'string|regex:/^[a-zA-Z]+$/',
+            'ative' => 'in:1,0',
+            'carnet' => 'digits_between:1,50|unique:usuarios,carnet,' . $id_usuario . ',id_usuario',
+            'correo' => 'nullable|email|unique:usuarios,correo,' . $id_usuario . ',id_usuario',
+            'telefono' => 'nullable|string',
             'nombre_rol' => 'in:Admin,Usuario,Expositor',
             'nombre_area' => 'in:Docente,Administrativo,Externo,Estudiante',
         ]);

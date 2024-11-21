@@ -12,27 +12,43 @@
                         <div class="modal-body">
                             <div class="mb-3">
                                 <label for="nombre_usuario" class="form-label">Nombre de Usuario</label>
-                                <input type="text" class="form-control" id="nombre_usuario" name="nombre_usuario" value="{{ $use->nombre_usuario }}" required>
+                                <input type="text" class="form-control" id="nombre_usuario" name="nombre_usuario" required>
                             </div>
                             <div class="mb-3">
                                 <label for="contrasena" class="form-label">Contraseña</label>
-                                <input type="password" class="form-control" id="contrasena" name="contrasena" value="{{ $use->contrasena }}" required>
+                                <input type="password" class="form-control" id="contrasena" name="contrasena" required>
                             </div>
                             <div class="mb-3">
                                 <label for="nombre" class="form-label">Nombre</label>
-                                <input type="text" class="form-control" id="nombre" name="nombre" value="{{ $use->nombre }}" required>
+                                <input type="text" class="form-control" id="nombre" name="nombre" required>
                             </div>
                             <div class="mb-3">
                                 <label for="apellido_p" class="form-label">Apellido Paterno</label>
-                                <input type="text" class="form-control" id="apellido_p" name="apellido_p" value="{{ $use->apellido_p }}" required>
+                                <input type="text" class="form-control" id="apellido_p" name="apellido_p" required>
                             </div>
                             <div class="mb-3">
                                 <label for="apellido_m" class="form-label">Apellido Materno</label>
-                                <input type="text" class="form-control" id="apellido_m" name="apellido_m" value="{{ $use->apellido_m }}" required>
+                                <input type="text" class="form-control" id="apellido_m" name="apellido_m" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="ative" class="form-label">Estado</label>
+                                <input type="number" class="form-control" id="ative" name="ative" required>
                             </div>
                             <div class="mb-3">
                                 <label for="carnet" class="form-label">Carnet</label>
-                                <input type="text" class="form-control" id="carnet" name="carnet" value="{{ $use->carnet }}" required>
+                                <input type="number" class="form-control" id="carnet" name="carnet" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="fecha_nac" class="form-label">Fecha Nac</label>
+                                <input type="date" class="form-control" id="fecha_nac" name="fecha_nac" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="correo" class="form-label">Correo</label>
+                                <input type="email" class="form-control" id="correo" name="correo" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="telefono" class="form-label">Teléfono</label>
+                                <input type="number" class="form-control" id="telefono" name="telefono" required>
                             </div>
                             <div class="mb-3">
                                 <label for="nombre_rol" class="form-label">Rol</label>

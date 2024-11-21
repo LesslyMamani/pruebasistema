@@ -31,8 +31,12 @@
                         <input type="text" class="form-control" id="apellido_m" name="apellido_m" required>
                     </div>
                     <div class="mb-3">
+                        <label for="ative" class="form-label">Estado</label>
+                        <input type="number" class="form-control" id="ative" name="ative" required>
+                    </div>
+                    <div class="mb-3">
                         <label for="carnet" class="form-label">Carnet</label>
-                        <input type="text" class="form-control" id="carnet" name="carnet" required>
+                        <input type="number" class="form-control" id="carnet" name="carnet" required>
                     </div>
                     <div class="mb-3">
                         <label for="fecha_nac" class="form-label">Fecha Nac</label>
@@ -40,11 +44,11 @@
                     </div>
                     <div class="mb-3">
                         <label for="correo" class="form-label">Correo</label>
-                        <input type="text" class="form-control" id="correo" name="correo" required>
+                        <input type="email" class="form-control" id="correo" name="correo" required>
                     </div>
                     <div class="mb-3">
                         <label for="telefono" class="form-label">Teléfono</label>
-                        <input type="text" class="form-control" id="telefono" name="telefono" required>
+                        <input type="number" class="form-control" id="telefono" name="telefono" required>
                     </div>
                     
                     <div class="mb-3">
@@ -74,6 +78,18 @@
     </div>
 </div>
 
-@push('scritps')
-    {{-- agregar una etiquera para limpiar los campos --}}
+@push('scripts')
+<script>
+    // Escuchar el evento de cierre del modal para limpiar los campos
+    document.getElementById('createUserModal').addEventListener('hidden.bs.modal', function () {
+        // Obtener todos los campos del formulario dentro del modal
+        const form = this.querySelector('form');
+        form.reset(); // Reinicia todos los campos del formulario
+    });
+
+    // Opcional: limpiar también al abrir, si es necesario
+    document.getElementById('createUserModal').addEventListener('shown.bs.modal', function () {
+        // Si necesitas limpiar campos adicionales o hacer otra lógica, agrégalo aquí
+    });
+</script>
 @endpush
