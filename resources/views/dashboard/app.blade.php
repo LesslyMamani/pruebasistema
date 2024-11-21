@@ -13,7 +13,7 @@
     <title>Capasitacion</title>
 
     <!-- Fav Icon -->
-    <link rel="icon" href="{{ asset('img/favicon.png') }}">
+    <link rel="icon" href="{{ asset('img/FOTOLOGO.png') }}">
 
     <!-- NFTMax Stylesheet -->
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">

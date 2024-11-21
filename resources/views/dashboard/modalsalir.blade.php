@@ -20,7 +20,7 @@
                 <div class="nftmax-preview__close">
                     <div class="nftmax-preview__close-img"><img src="img/close.png" alt="#"></div>
                     <h2 class="nftmax-preview__close-title">Esta seguro que quiere salir del sistema de
-                        <span>Capasitacion?</span>
+                        <span>Capacitacion?</span>
                     </h2>
                     <div class="nftmax__item-button--group">
                         <form action="{{ route('logout') }}" method="POST">

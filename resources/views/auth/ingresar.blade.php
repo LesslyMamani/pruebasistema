@@ -10,10 +10,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Site Title -->
-    <title>NFT MAX - NFT Dashboard Template</title>
+    <title>Sistema Capcitacion</title>
 
     <!-- Fav Icon -->
-    <link rel="icon" href="img/favicon.png">
+    <link rel="icon" href="img/FOTOLOGO.png">
 
     <!-- NFTMax Stylesheet -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -44,16 +44,17 @@
                     <div class="col-xxl-6 col-lg-6 col-12 nftmax-hidden-rp">
                         <div class="nftmax-wc__inner nft-gr-primary">
                             <!-- Logo -->
-                            <div class="nftmax-wc__logo">
-                                <a href="#"><img src="img/logo.png" alt="#"></a>
-                            </div>
+                            {{-- <div class="nftmax-wc__logo">
+                                <a href="#"><img src="img/AQUIERA" alt="#"></a>
+                            </div> --}}
+                            <br>
                             <!-- Middle Image -->
                             <div class="nftmax-wc__middle">
-                                <a href="#"><img src="img/welcome-vector.png" alt="#"></a>
+                                <a href="#"><img src="img/FOTOLOGO.png" alt="#"></a>
                             </div>
                             <!-- Welcome Heading -->
                             <div class="nftmax-wc__heading">
-                                <h2 class="nftmax-wc__title">Welcome to Nftmax <br> Admin Panel</h2>
+                                <h2 class="nftmax-wc__title">Sistema de Capacitacion <br>Unidad de Tecnologias de Informacion</h2>
                             </div>
 
                         </div>
