@@ -28,8 +28,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/prueba', [MetricasController::class, 'prueba'])->name('prueba');
     // Route::resource('usuarios', UsuarioController::class);
 
-   // Listar usuarios
-   Route::get('/usuarios', [UsuarioController::class, 'index'])->name('usuarios.index');
+  // Listar usuarios
+Route::get('/usuarios', [UsuarioController::class, 'index'])->name('usuarios.index');
    // Editar usuario
    Route::get('/usuarios/{id}/edit', [UsuarioController::class, 'edit'])->name('usuarios.edit');
    Route::put('/usuarios/{id}', [UsuarioController::class, 'update'])->name('usuarios.update');
@@ -40,6 +40,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/usuarios/{id}', [UsuarioController::class, 'show'])->name('usuarios.show');
     // Eliminar usuario
     Route::delete('/usuarios/{id}', [UsuarioController::class, 'destroy'])->name('usuarios.destroy');
+
+
 
     Route::get('/area', [areaController::class, 'index'])->name('area');
     Route::resource('area', AreaController::class);

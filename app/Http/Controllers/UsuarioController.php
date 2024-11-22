@@ -62,8 +62,6 @@ class UsuarioController extends Controller
             $usuario->telefono = $request->telefono;
             $usuario->nombre_rol = $request->nombre_rol;
             $usuario->nombre_area = $request->nombre_area;
-
-            // Asignar manualmente las fechas de creación y actualización
             $usuario->created_at = now();
             $usuario->updated_at = now();
 
