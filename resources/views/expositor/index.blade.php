@@ -1,5 +1,12 @@
 @extends('dashboard.app')
+<style>
+    .nftmax-dsinner {
+        width: 75vw; /* 100% del ancho de la ventana del navegador */
+        height: 100vh; /* 100% de la altura de la ventana del navegador */
+        /* Fondo blanco, puedes personalizarlo */
+    }
 
+    </style>
 @section('content')
     <section class="nftmax-adashboard nftmax-show">
         <div class="container">
@@ -56,7 +63,7 @@
                                                             {{ $usuario->telefono }}</td>
                                                         <td class="nftmax-table__column-5 nftmax-table__data-9">
                                                             <!-- Botón Editar -->
-                                                            <button class="btn btn-sm btn-primary" data-bs-toggle="modal"
+                                                            <button class="btn btn-sm btn-primary"style="display: inline-block;" data-bs-toggle="modal"
                                                                 data-bs-target="#editarUsuarioModal{{ $usuario->id_usuario }}">
                                                                 Editar
                                                             </button>
