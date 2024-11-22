@@ -13,8 +13,6 @@ return new class extends Migration
     {
         Schema::create('usuarios', function (Blueprint $table) {
             $table->integer('id_usuario', true);
-            $table->string('nombre_usuario', 50)->unique('nombre_usuario');
-            $table->string('contrasena');
             $table->string('nombre', 50);
             $table->string('apellido_p', 50);
             $table->string('apellido_m', 50);
