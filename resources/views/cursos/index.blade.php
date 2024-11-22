@@ -182,8 +182,9 @@
                             <select class="form-control" id="id_area" name="id_area" required>
                                 <option value="" disabled>Seleccione un área</option>
                                 @foreach ($areas as $area)
-                                    <option value="{{ $area->id }}" {{ old('id_area', $curso->id) == $area->id ? 'selected' : '' }}>
+                                    <option value="{{ $area->id }}" {{ old('id_area') == $area->id ? 'selected' : '' }}>
                                         {{ $area->nombre }}
+
                                     </option>
                                 @endforeach
                             </select>

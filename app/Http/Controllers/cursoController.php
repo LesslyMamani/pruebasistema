@@ -15,14 +15,16 @@ class cursoController extends Controller
         $cursos = Curso::with('area')->where('estado', 1)->get(); // Incluye el área asociada al curso
         $areas = Area::all()->where('estado', 1); // Obtén todas las áreas
         return view('cursos.index', compact('cursos', 'areas'));
+
     }
 
 
 
     public function create()
 {
+    $curso = new Curso();
     $areas = Area::all(); // Obtener todas las áreas
-    return view('cursos.create', compact('areas'));
+    return view('cursos.index', compact('areas'));
 }
 
 
