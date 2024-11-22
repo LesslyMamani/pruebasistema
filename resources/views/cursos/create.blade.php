@@ -1,4 +1,4 @@
-@extends('dashboard.app')
+{{-- @extends('dashboard.app')
 
 @section('content')
     <!-- Formulario para crear un curso -->
@@ -75,4 +75,4 @@
             </div>
         </form>
     </div>
-@endsection
+@endsection --}}

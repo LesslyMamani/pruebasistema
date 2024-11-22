@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Site Title -->
-    <title>Capasitacion</title>
+    <title>Capacitacion</title>
 
     <!-- Fav Icon -->
     <link rel="icon" href="{{ asset('img/FOTOLOGO.png') }}">

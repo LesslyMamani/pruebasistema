@@ -29,13 +29,11 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     // Route::get('/metricas', [MetricasController::class, 'index'])->name('metricas.index');
     Route::get('/prueba', [MetricasController::class, 'prueba'])->name('prueba');
-<<<<<<< HEAD
     Route::get('/area', [areaController::class, 'index'])->name('area');
     /* Route::put('/area/{area}', [AreaController::class, 'update'])->name('area.update');
     Route::resource('area', AreaController::class)->except(['update']); */
     Route::resource('area', AreaController::class);
 
-=======
 
     Route::get('/area', [areaController::class, 'index'])->name('area');
     Route::resource('area', AreaController::class);
@@ -45,7 +43,6 @@ Route::middleware('auth')->group(function () {
 
     Route::resource('expositor', expositorController::class);
     Route::get('/expositor', [expositorController::class, 'index'])->name('expositor');
->>>>>>> fed6d91edcee08eca14d456509a3e8c1587ebe24
 
 });
 
