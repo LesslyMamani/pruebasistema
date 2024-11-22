@@ -18,7 +18,6 @@
                             <div class="nftmax-table mg-top-100">
                                 <div class="nftmax-table__heading">
                                     <h3 class="nftmax-table__title mb-0">Listado de Expositores</h3>
-
                                 </div>
 
                                 <!-- Tabla -->

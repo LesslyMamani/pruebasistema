@@ -21,7 +21,7 @@ class CreateInscripcionesTable extends Migration
             $table->date('fecha_inscripcion');
             $table->enum('estado', ['Inscrito', 'Completado', 'Cancelado'])->default('Inscrito');
             $table->timestamps();
-            $table->foreign('id_usuario')->references('id_usuario')->on('usuarios')->onDelete('cascade');
+            $table->foreign('id_usuario')->references('id_usuarios')->on('usuarios')->onDelete('cascade');
             $table->foreign('id_curso')->references('id_curso')->on('cursos')->onDelete('cascade');
         });
     }
