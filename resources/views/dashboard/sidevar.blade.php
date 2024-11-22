@@ -3,10 +3,7 @@
     <div class="admin-menu">
         <!-- Logo -->
         <div class="logo">
-            <a href="index.html">
-                <img class="nftmax-logo__main" src="img/logo-white.png" alt="#">
-            </a>
-            <div class="nftmax__sicon close-icon"><img src="img/menu-toggle.svg" alt="#"></div>
+                <img class="nftmax-logo__main" src="img/logo11.png" alt="#" style="width: 150px; height: 150px;">
         </div>
         <!-- Author Details -->
         <div class="admin-menu__one">
@@ -31,10 +28,23 @@
                                             d="M8.60156 15.2001H13.4016C13.879 15.2001 14.3368 15.0105 14.6744 14.6729C15.0119 14.3353 15.2016 13.8775 15.2016 13.4001V8.6001H8.60156V15.2001Z">
                                         </path>
                                     </svg></span><span class="menu-bar__name">Dashboard</span></span></a></li>
+                                    
+                                    {{-- USUARIO --}}
+                                    <li class="{{ Route::is('usuarios.index') ? 'active' : '' }}">
+                                        <a href="{{ route('usuarios.index') }}">
+                                           <span class="menu-bar__name">Usuario</span>
+                                        </a>
+                                    </li>
 
+<<<<<<< HEAD
+                    <li class="{{ Route::is('prueba') ? 'active' : '' }}"><a href="{{ route('prueba') }}">
+                        <span class="menu-bar__text"><span class="nftmax-menu-icon nftmax-svg-icon__v2"><svg
+
+=======
                     <li class="{{ Route::is('prueba') ? 'active' : '' }}"><a href="{{ route('prueba') }}"><span
 
                                 class="menu-bar__text"><span class="nftmax-menu-icon nftmax-svg-icon__v2"><svg
+>>>>>>> fed6d91edcee08eca14d456509a3e8c1587ebe24
                                         class="nftmax-svg-icon" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
                                         <path
                                             d="M8.40093 8.39892C8.07534 8.74593 7.8023 9.13874 7.59052 9.56484L13.3422 15.3165C13.4732 15.4475 13.651 15.5211 13.8362 15.5211C14.0215 15.5211 14.1992 15.4475 14.3303 15.3165L15.3185 14.3283C15.3834 14.2634 15.4349 14.1864 15.47 14.1016C15.5052 14.0168 15.5232 13.9259 15.5232 13.8342C15.5232 13.7424 15.5052 13.6515 15.47 13.5667C15.4349 13.482 15.3834 13.4049 15.3185 13.34L9.56685 7.5899C9.13999 7.79984 8.74699 8.07254 8.40093 8.39892Z">

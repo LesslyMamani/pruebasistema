@@ -12,6 +12,11 @@ class MetricasController extends Controller
         return view('metricas.index',compact('usuario'));
     }
     public function prueba(){
-        return view('usuarios.index');
+
+        $user = User::all();
+
+        return view('usuarios.index',compact('user'));
+
+
     }
 }

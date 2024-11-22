@@ -22,6 +22,8 @@
     <link rel="stylesheet" href="{{ asset('css/slickslider.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/reset.css') }}">
     <link rel="stylesheet" href="{{ asset('style.css') }}">
+    
+    
 
 </head>
 
