@@ -84,12 +84,7 @@
                                     </svg></span><span class="menu-bar__name">prueba</span><span
                                     class="menu-bar__count nft-gr-primary">19</span></span></a></li>
 
-                    {{-- USUARIO --}}
-                    <li class="{{ Route::is('usuarios.index') ? 'active' : '' }}">
-                        <a href="{{ route('usuarios.index') }}">
-                            <span class="menu-bar__name">Usuario</span>
-                        </a>
-                    </li>
+                   
                     <li class="{{ Route::is('area.index') ? 'active' : '' }}"><a href="{{ route('area.index') }}"><span
                                 class="menu-bar__text"><span class="nftmax-menu-icon nftmax-svg-icon__v1"><svg
                                         class="nftmax-svg-icon" xmlns="http://www.w3.org/2000/svg">
