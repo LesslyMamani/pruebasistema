@@ -22,31 +22,12 @@ use App\Http\Controllers\expositorController;
 //     return view('welcome');
 // });
 
-Route::get('/dashboard', [MetricasController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard',[MetricasController::class,'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/prueba', [MetricasController::class, 'prueba'])->name('prueba');
-    Route::get('/area', [areaController::class, 'index'])->name('area');
-    /* Route::put('/area/{area}', [AreaController::class, 'update'])->name('area.update');
-    Route::resource('area', AreaController::class)->except(['update']); */
-    Route::resource('area', AreaController::class);
+    // Route::resource('usuarios', UsuarioController::class);
 
-
-<<<<<<< HEAD
-
-    // Listar usuarios
-    Route::get('/usuarios', [UsuarioController::class, 'index'])->name('usuarios.index');
-
-    // Editar usuario
-    Route::get('/usuarios/{id}/edit', [UsuarioController::class, 'edit'])->name('usuarios.edit');
-    Route::put('/usuarios/{id}', [UsuarioController::class, 'update'])->name('usuarios.update');
-
-
-    // Crear usuario
-    Route::get('/usuarios/create', [UsuarioController::class, 'create'])->name('usuarios.create');
-    Route::post('/usuarios', [UsuarioController::class, 'store'])->name('usuarios.store');
-
-=======
    // Listar usuarios
    Route::get('/usuarios', [UsuarioController::class, 'index'])->name('usuarios.index');
    // Editar usuario
@@ -55,26 +36,18 @@ Route::middleware('auth')->group(function () {
     // Crear usuario
     Route::get('/usuarios/create', [UsuarioController::class, 'create'])->name('usuarios.create');
     Route::post('/usuarios', [UsuarioController::class, 'store'])->name('usuarios.store');
->>>>>>> a054c722cc5b4b2199a065cb2707de12eb6de428
     // Ver detalles de un usuario
     Route::get('/usuarios/{id}', [UsuarioController::class, 'show'])->name('usuarios.show');
     // Eliminar usuario
     Route::delete('/usuarios/{id}', [UsuarioController::class, 'destroy'])->name('usuarios.destroy');
 
-<<<<<<< HEAD
-=======
-
-
->>>>>>> a054c722cc5b4b2199a065cb2707de12eb6de428
     Route::get('/area', [areaController::class, 'index'])->name('area');
     Route::resource('area', AreaController::class);
-
     Route::resource('curso', cursoController::class);
     Route::get('/curso', [cursoController::class, 'index'])->name('curso');
-
     Route::resource('expositor', expositorController::class);
     Route::get('/expositor', [expositorController::class, 'index'])->name('expositor');
+
+
 });
-
-
-require __DIR__ . '/auth.php';
+require __DIR__.'/auth.php';
