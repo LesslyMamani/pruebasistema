@@ -12,13 +12,19 @@
                         <label for="nombre" class="form-label">Nombre</label>
                         <input type="text" class="form-control" id="nombre" name="nombre" required>
                     </div>
-                    <div class="mb-3">
-                        <label for="apellido_p" class="form-label">Apellido Paterno</label>
-                        <input type="text" class="form-control" id="apellido_p" name="apellido_p" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="apellido_m" class="form-label">Apellido Materno</label>
-                        <input type="text" class="form-control" id="apellido_m" name="apellido_m" required>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="apellido_p" class="form-label">Apellido Paterno</label>
+                                <input type="text" class="form-control" id="apellido_p" name="apellido_p" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="apellido_m" class="form-label">Apellido Materno</label>
+                                <input type="text" class="form-control" id="apellido_m" name="apellido_m" required>
+                            </div>
+                        </div>
                     </div>
                     <div class="mb-3">
                         <label for="estado" class="form-label">Estado</label>
@@ -97,9 +103,9 @@
         form.reset(); // Reinicia todos los campos del formulario
     });
 
-    // Opcional: limpiar también al abrir, si es necesario
-    document.getElementById('createUserModal').addEventListener('shown.bs.modal', function () {
-        // Si necesitas limpiar campos adicionales o hacer otra lógica, agrégalo aquí
-    });
-</script>
+        // Opcional: limpiar también al abrir, si es necesario
+        document.getElementById('createUserModal').addEventListener('shown.bs.modal', function() {
+            // Si necesitas limpiar campos adicionales o hacer otra lógica, agrégalo aquí
+        });
+    </script>
 @endpush

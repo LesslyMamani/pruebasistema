@@ -11,6 +11,7 @@
             <!-- Nav Menu -->
             <div class="menu-bar">
                 <ul class="menu-bar__one">
+
                     <li class="{{ Route::is('dashboard') ? 'active' : '' }}"><a href="{{ route('dashboard') }}"><span
                                 class="menu-bar__text"><span class="nftmax-menu-icon nftmax-svg-icon__v1"><svg
                                         class="nftmax-svg-icon" xmlns="http://www.w3.org/2000/svg" width="16"
@@ -28,7 +29,6 @@
                                             d="M8.60156 15.2001H13.4016C13.879 15.2001 14.3368 15.0105 14.6744 14.6729C15.0119 14.3353 15.2016 13.8775 15.2016 13.4001V8.6001H8.60156V15.2001Z">
                                         </path>
                                     </svg></span><span class="menu-bar__name">Dashboard</span></span></a></li>
-
 
 
                     {{-- USUARIO --}}
@@ -84,9 +84,15 @@
                                     </svg></span><span class="menu-bar__name">prueba</span><span
                                     class="menu-bar__count nft-gr-primary">19</span></span></a></li>
 
+                    {{-- USUARIO --}}
+                    <li class="{{ Route::is('usuarios.index') ? 'active' : '' }}">
+                        <a href="{{ route('usuarios.index') }}">
+                            <span class="menu-bar__name">Usuario</span>
+                        </a>
+                    </li>
                     <li class="{{ Route::is('area.index') ? 'active' : '' }}"><a href="{{ route('area.index') }}"><span
-                                class="menu-bar__text"><span class="nftmax-menu-icon nftmax-svg-icon__v4"><svg
-                                        class="nftmax-svg-icon" viewBox="0 0 16 13" xmlns="http://www.w3.org/2000/svg">
+                                class="menu-bar__text"><span class="nftmax-menu-icon nftmax-svg-icon__v1"><svg
+                                        class="nftmax-svg-icon" xmlns="http://www.w3.org/2000/svg">
                                         <path
                                             d="M14.0764 6.57306C13.201 6.57306 12.4115 6.56813 11.6219 6.57503C10.998 6.57996 10.8122 6.76339 10.8031 7.37187C10.7981 7.74959 10.7971 8.12828 10.8062 8.506C10.8183 9.04051 11.0303 9.25353 11.5745 9.25945C12.3812 9.26734 13.1879 9.26142 14.0016 9.26142C14.0016 10.1164 14.0905 10.9547 13.9754 11.7663C13.8704 12.5099 13.1172 12.9902 12.2933 12.9922C8.78993 13.0011 5.28652 13.003 1.7831 12.9912C0.778516 12.9873 0.0192745 12.2476 0.0122071 11.2713C-0.00394697 9.0346 -0.00394697 6.79889 0.0122071 4.56221C0.0192745 3.57602 0.773468 2.84623 1.78108 2.84327C5.2845 2.83341 8.78791 2.8344 12.2913 2.84327C13.3131 2.84525 14.0481 3.55333 14.0743 4.54249C14.0905 5.19633 14.0764 5.85215 14.0764 6.57306Z">
                                         </path>

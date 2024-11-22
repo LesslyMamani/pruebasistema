@@ -22,10 +22,15 @@ use App\Http\Controllers\expositorController;
 //     return view('welcome');
 // });
 
-Route::get('/dashboard',[MetricasController::class,'index'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard', [MetricasController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/prueba', [MetricasController::class, 'prueba'])->name('prueba');
+    Route::get('/area', [areaController::class, 'index'])->name('area');
+    /* Route::put('/area/{area}', [AreaController::class, 'update'])->name('area.update');
+    Route::resource('area', AreaController::class)->except(['update']); */
+    Route::resource('area', AreaController::class);
+
 
    // Listar usuarios
    Route::get('/usuarios', [UsuarioController::class, 'index'])->name('usuarios.index');
@@ -50,8 +55,7 @@ Route::middleware('auth')->group(function () {
 
     Route::resource('expositor', expositorController::class);
     Route::get('/expositor', [expositorController::class, 'index'])->name('expositor');
-
 });
 
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

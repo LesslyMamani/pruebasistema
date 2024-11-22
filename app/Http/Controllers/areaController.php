@@ -34,7 +34,7 @@ class AreaController extends Controller
         ], [
             'nombre.required' => 'El campo Nombre del Área es obligatorio.',
             'nombre.max' => 'El campo Nombre del Área no puede tener más de 50 caracteres.',
-            'nombre.regex' => 'El campo Nombre del Área solo puede contener letras y un espacio entre palabras, sin más de dos espacios consecutivos.',
+            'nombre.regex' => 'El campo Nombre del Área solo puede contener letras, no caracteres especiales y numeros.',
         ]);
 
         // Crear el área en la base de datos

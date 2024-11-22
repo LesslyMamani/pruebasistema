@@ -53,6 +53,7 @@
                                                                 @method('DELETE')
                                                                 <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('¿Estás seguro de eliminar esta área?')">Eliminar</button>
                                                             </form>
+
                                                         </div>
                                                     </td>
                                                 </tr>

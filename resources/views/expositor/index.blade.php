@@ -5,23 +5,20 @@
         /* 100% del ancho de la ventana del navegador */
         height: 100vh;
         /* 100% de la altura de la ventana del navegador */
+        /* Fondo blanco, puedes personalizarlo */
     }
 </style>
-
 @section('content')
     <section class="nftmax-adashboard nftmax-show">
         <div class="container">
             <div class="row">
                 <div class="col-xxl-9 col-12 nftmax-main__column">
                     <div class="nftmax-body">
-                        <!-- Dashboard Inner -->
                         <div class="nftmax-dsinner">
                             <div class="nftmax-table mg-top-100">
                                 <div class="nftmax-table__heading">
-                                    <h3 class="nftmax-table__title mb-0">Listado de Cursos</h3>
-                                    <!-- Botón para abrir modal -->
-                                    <button class="btn btn-primary" data-bs-toggle="modal"
-                                        data-bs-target="#crearCursoModal">Crear Nuevo Curso</button>
+                                    <h3 class="nftmax-table__title mb-0">Listado de Expositores</h3>
+
                                 </div>
 
                                 <!-- Tabla -->
@@ -33,62 +30,153 @@
                                                 <tr>
                                                     <th class="nftmax-table__column-1 nftmax-table__h1">ID</th>
                                                     <th class="nftmax-table__column-2 nftmax-table__h2">Nombre</th>
-                                                    <th class="nftmax-table__column-3 nftmax-table__h3">Área</th>
-                                                    <th class="nftmax-table__column-4 nftmax-table__h4">Duración (hrs)</th>
-                                                    <th class="nftmax-table__column-5 nftmax-table__h5">Fecha Inicio</th>
-                                                    <th class="nftmax-table__column-6 nftmax-table__h6">Fecha Fin</th>
-                                                    <th class="nftmax-table__column-5 nftmax-table__h7">Acciones</th>
+                                                    <th class="nftmax-table__column-3 nftmax-table__h3">Apellido Paterno
+                                                    </th>
+                                                    <th class="nftmax-table__column-4 nftmax-table__h4">Apellido Materno
+                                                    </th>
+                                                    <th class="nftmax-table__column-5 nftmax-table__h5">Carnet</th>
+                                                    <th class="nftmax-table__column-5 nftmax-table__h5">Expedido</th>
+                                                    <th class="nftmax-table__column-6 nftmax-table__h6">Fecha Nacimiento
+                                                    </th>
+                                                    <th class="nftmax-table__column-5 nftmax-table__h8">Telefono</th>
+                                                    <th class="nftmax-table__column-5 nftmax-table__h9">Acciones</th>
                                                 </tr>
                                             </thead>
                                             <tbody class="nftmax-table__body">
-                                                @foreach ($cursos as $curso)
+                                                @foreach ($usuarios as $usuario)
                                                     <tr>
                                                         <td class="nftmax-table__column-1 nftmax-table__data-1">
-                                                            {{ $curso->id_curso }}</td>
+                                                            {{ $usuario->id_usuario }}</td>
                                                         <td class="nftmax-table__column-2 nftmax-table__data-2">
-                                                            {{ $curso->nombre }}</td>
-                                                        <td class="nftmax-table__column-7 nftmax-table__data-7">
-                                                            {{ $curso->area->nombre ?? 'No asignada' }} </td>
+                                                            {{ $usuario->nombre }}</td>
                                                         <td class="nftmax-table__column-3 nftmax-table__data-3">
-                                                            {{ $curso->duracion }}</td>
+                                                            {{ $usuario->apellido_p }}</td>
                                                         <td class="nftmax-table__column-4 nftmax-table__data-4">
-                                                            {{ $curso->fecha_inicio }}</td>
+                                                            {{ $usuario->apellido_m }}</td>
                                                         <td class="nftmax-table__column-5 nftmax-table__data-5">
-                                                            {{ $curso->fecha_fin }}</td>
-
+                                                            {{ $usuario->carnet }}</td>
                                                         <td class="nftmax-table__column-6 nftmax-table__data-6">
-                                                            <!-- Acciones -->
-                                                            <div class="nftmax-table__actions">
-                                                                <!-- Botón Editar -->
-                                                                <button class="btn btn-sm btn-primary"
-                                                                    data-bs-toggle="modal"
-                                                                    data-bs-target="#editarCursoModal"
-                                                                    data-id="{{ $curso->id_curso }}"
-                                                                    data-nombre="{{ $curso->nombre }}"
-                                                                    data-duracion="{{ $curso->duracion }}"
-                                                                    data-fecha_inicio="{{ $curso->fecha_inicio }}"
-                                                                    data-fecha_fin="{{ $curso->fecha_fin }}"
-                                                                    data-id_area="{{ $curso->id_area }}">
-                                                                    <!-- Agregado id_area -->
-                                                                    Editar
-                                                                </button>
+                                                                {{ $usuario->expedido }}</td>
+                                                        <td class="nftmax-table__column-6 nftmax-table__data-6">
+                                                            {{ $usuario->fecha_nac }}</td>
 
-                                                                <!-- Botón Eliminar -->
-                                                                <form
-                                                                    action="{{ route('curso.destroy', $curso->id_curso) }}"
-                                                                    method="POST" style="display: inline-block;">
-                                                                    @csrf
-                                                                    @method('DELETE')
-                                                                    <button type="submit" class="btn btn-sm btn-danger"
-                                                                        onclick="return confirm('¿Estás seguro de eliminar este curso?')">Eliminar</button>
-                                                                </form>
-                                                            </div>
-
+                                                        <td class="nftmax-table__column-5 nftmax-table__data-8">
+                                                            {{ $usuario->telefono }}</td>
+                                                        <td class="nftmax-table__column-5 nftmax-table__data-9">
                                                         </td>
                                                     </tr>
+
+                                                    <!-- Modal Editar Usuario -->
+                                                    <div class="modal fade"
+                                                        id="editarUsuarioModal{{ $usuario->id_usuario }}" tabindex="-1"
+                                                        aria-labelledby="editarUsuarioModalLabel{{ $usuario->id_usuario }}"
+                                                        aria-hidden="true">
+                                                        <div class="modal-dialog">
+                                                            <div class="modal-content">
+                                                                <form
+                                                                    action="{{ route('expositor.update', $usuario->id_usuario) }}"
+                                                                    method="POST">
+                                                                    @csrf
+                                                                    @method('PUT')
+                                                                    <div class="modal-header">
+                                                                        <h5 class="modal-title"
+                                                                            id="editarUsuarioModalLabel{{ $usuario->id_usuario }}">
+                                                                            Editar Expositor</h5>
+                                                                        <button type="button" class="btn-close"
+                                                                            data-bs-dismiss="modal"
+                                                                            aria-label="Close"></button>
+                                                                    </div>
+
+                                                                    <div class="modal-body">
+                                                                        <!-- Nombre -->
+                                                                        <div class="mb-3">
+                                                                            <label for="edit_nombre"
+                                                                                class="form-label">Nombre</label>
+                                                                            <input type="text"
+                                                                                class="form-control @error('nombre') is-invalid @enderror"
+                                                                                id="edit_nombre" name="nombre"
+                                                                                value="{{ old('nombre', $usuario->nombre) }}"
+                                                                                required>
+                                                                        </div>
+
+                                                                        <!-- Apellido Paterno -->
+                                                                        <div class="mb-3">
+                                                                            <label for="edit_apellido_p"
+                                                                                class="form-label">Apellido Paterno</label>
+                                                                            <input type="text"
+                                                                                class="form-control @error('apellido_p') is-invalid @enderror"
+                                                                                id="edit_apellido_p" name="apellido_p"
+                                                                                value="{{ old('apellido_p', $usuario->apellido_p) }}"
+                                                                                required>
+                                                                        </div>
+
+                                                                        <!-- Apellido Materno -->
+                                                                        <div class="mb-3">
+                                                                            <label for="edit_apellido_m"
+                                                                                class="form-label">Apellido Materno</label>
+                                                                            <input type="text"
+                                                                                class="form-control @error('apellido_m') is-invalid @enderror"
+                                                                                id="edit_apellido_m" name="apellido_m"
+                                                                                value="{{ old('apellido_m', $usuario->apellido_m) }}"
+                                                                                required>
+                                                                        </div>
+
+                                                                        <!-- Carnet -->
+                                                                        <div class="mb-3">
+                                                                            <label for="edit_carnet"
+                                                                                class="form-label">Carnet</label>
+                                                                            <input type="text"
+                                                                                class="form-control @error('carnet') is-invalid @enderror"
+                                                                                id="edit_carnet" name="carnet"
+                                                                                value="{{ old('carnet', $usuario->carnet) }}"
+                                                                                required>
+                                                                        </div>
+                                                                        <!--expedido-->
+                                                                        <div class="mb-3">
+                                                                            <label for="edit_expedido"
+                                                                                class="form-label">Expedido</label>
+                                                                            <input type="text"
+                                                                                class="form-control @error('expedido') is-invalid @enderror"
+                                                                                id="edit_expedido" name="expedido"
+                                                                                value="{{ old('expedido', $usuario->expedido) }}"
+                                                                                required>
+                                                                        </div>
+
+                                                                        <!-- Fecha de Nacimiento -->
+                                                                        <div class="mb-3">
+                                                                            <label for="edit_fecha_nac"
+                                                                                class="form-label">Fecha de
+                                                                                Nacimiento</label>
+                                                                            <input type="date" class="form-control"
+                                                                                id="edit_fecha_nac" name="fecha_nac"
+                                                                                value="{{ old('fecha_nac', $usuario->fecha_nac) }}"
+                                                                                required>
+                                                                        </div>
+
+
+                                                                        <!-- Teléfono -->
+                                                                        <div class="mb-3">
+                                                                            <label for="edit_telefono"
+                                                                                class="form-label">Teléfono</label>
+                                                                            <input type="tel" class="form-control"
+                                                                                id="edit_telefono" name="telefono"
+                                                                                value="{{ old('telefono', $usuario->telefono) }}"
+                                                                                required>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="modal-footer">
+                                                                        <button type="button" class="btn btn-secondary"
+                                                                            data-bs-dismiss="modal">Cancelar</button>
+                                                                        <button type="submit"
+                                                                            class="btn btn-primary">Actualizar</button>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 @endforeach
                                             </tbody>
-
                                         </table>
                                     </div>
                                 </div>
@@ -99,157 +187,4 @@
             </div>
         </div>
     </section>
-
-    <!-- Modal Crear Curso -->
-    <div class="modal fade" id="crearCursoModal" tabindex="-1" aria-labelledby="crearCursoModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <form action="{{ route('curso.store') }}" method="POST">
-                    @csrf
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="crearCursoModalLabel">Crear Nuevo Curso</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="id_area" class="form-label">Área</label>
-                        <select class="form-control" id="id_area" name="id_area" required>
-                            <option value="" disabled selected>Seleccione un área</option>
-                            @foreach ($areas as $area)
-                                <option value="{{ $area->id }}">{{ $area->nombre }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                    <div class="modal-body">
-                        <div class="mb-3">
-                            <label for="nombre" class="form-label">Nombre del Curso</label>
-                            <input type="text" class="form-control @error('nombre') is-invalid @enderror" id="nombre"
-                                name="nombre" value="{{ old('nombre') }}" required>
-                            @error('nombre')
-                                <div class="invalid-feedback">
-                                    {{ $message }}
-                                </div>
-                            @enderror
-                        </div>
-                        <div class="mb-3">
-                            <label for="duracion" class="form-label">Duración (hrs)</label>
-                            <input type="number" class="form-control" id="duracion" name="duracion"
-                                value="{{ old('duracion') }}" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="fecha_inicio" class="form-label">Fecha de Inicio</label>
-                            <input type="date" class="form-control" id="fecha_inicio" name="fecha_inicio"
-                                value="{{ old('fecha_inicio') }}" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="fecha_fin" class="form-label">Fecha de Fin</label>
-                            <input type="date" class="form-control" id="fecha_fin" name="fecha_fin"
-                                value="{{ old('fecha_fin') }}" required>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                        <button type="submit" class="btn btn-primary">Guardar</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal Editar Curso -->
-    <div class="modal fade" id="editarCursoModal" tabindex="-1" aria-labelledby="editarCursoModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="editarCursoModalLabel">Editar Cursoss</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form id="editarCursoForm" method="POST">
-                        @csrf
-                        @method('PUT')
-
-                        <!-- Nombre del curso -->
-                        <div class="mb-3">
-                            <label for="nombre" class="form-label">Nombre del Curso</label>
-                            <input type="text" class="form-control" id="nombre" name="nombre" required>
-                        </div>
-
-                        <!-- Selección de Área -->
-                        <div class="mb-3">
-                            <label for="id_area" class="form-label">Área</label>
-                            <select class="form-control" id="id_area" name="id_area" required>
-                                <option value="" disabled>Seleccione un área</option>
-                                @foreach ($areas as $area)
-                                    <option value="{{ $area->id }}" {{ old('id_area', $curso->id) == $area->id ? 'selected' : '' }}>
-                                        {{ $area->nombre }}
-                                    </option>
-                                @endforeach
-                            </select>
-                        </div>
-
-
-                        <!-- Duración -->
-                        <div class="mb-3">
-                            <label for="duracion" class="form-label">Duración (hrs)</label>
-                            <input type="number" class="form-control" id="duracion" name="duracion" required>
-                        </div>
-
-                        <!-- Fecha de inicio -->
-                        <div class="mb-3">
-                            <label for="fecha_inicio" class="form-label">Fecha de Inicio</label>
-                            <input type="date" class="form-control" id="fecha_inicio" name="fecha_inicio" required>
-                        </div>
-
-                        <!-- Fecha de fin -->
-                        <div class="mb-3">
-                            <label for="fecha_fin" class="form-label">Fecha de Fin</label>
-                            <input type="date" class="form-control" id="fecha_fin" name="fecha_fin" required>
-                        </div>
-
-                        <div class="d-flex justify-content-between">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                            <button type="submit" class="btn btn-primary">Guardar Cambios</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    @if ($errors->any())
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var crearCursoModal = new bootstrap.Modal(document.getElementById('crearCursoModal'));
-            crearCursoModal.show();
-        });
-    </script>
-    @endif
-
-    <script>
-    document.getElementById('editarCursoModal').addEventListener('show.bs.modal', function(event) {
-    var button = event.relatedTarget;
-    var id = button.getAttribute('data-id');
-    var nombre = button.getAttribute('data-nombre');
-    var idArea = button.getAttribute('data-id_area');
-    var duracion = button.getAttribute('data-duracion');
-    var fechaInicio = button.getAttribute('data-fecha_inicio');
-    var fechaFin = button.getAttribute('data-fecha_fin');
-    // Este es el ID del área
-
-    var modal = this;
-    modal.querySelector('#nombre').value = nombre;
-    modal.querySelector('#duracion').value = duracion;
-    modal.querySelector('#fecha_inicio').value = fechaInicio;
-    modal.querySelector('#fecha_fin').value = fechaFin;
-
-    // Asigna el ID del área correctamente en el select
-    modal.querySelector('#id_area').value = idArea;  // Establece el valor del select
-
-    // El formulario de edición debe tener la acción correcta
-    var formEditar = modal.querySelector('form');
-    formEditar.action = "/curso/" + id;  // Se usa la URL para la actualización
-});
-
-    </script>
 @endsection

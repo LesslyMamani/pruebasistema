@@ -60,12 +60,13 @@
                         </div>
                     </div>
                     <div class="col-xxl-6 col-lg-6 col-12">
+
                         <!-- Welcome Form -->
                         <div class="nftmax-wc__form">
                             <div class="nftmax-wc__form-inner">
                                 <div class="nftmax-wc__heading">
-                                    <h3 class="nftmax-wc__form-title nftmax-wc__form-title__one"
-                                        style="background-image:url('img/heading-vector.png')">Log in</h3>
+                                    <h1 class="nftmax-wc__form-title nftmax-wc__form-title__one"
+                                        style="background-image:url('')">UTIC</h1>
                                 </div>
                                 <!-- Sign in Form -->
                                 <form class="nftmax-wc__form-main" action="{{ route('login.store') }}" method="POST">
