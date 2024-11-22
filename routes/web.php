@@ -26,6 +26,11 @@ Route::get('/dashboard', [MetricasController::class, 'index'])->middleware(['aut
 
 Route::middleware('auth')->group(function () {
     Route::get('/prueba', [MetricasController::class, 'prueba'])->name('prueba');
+    Route::get('/area', [areaController::class, 'index'])->name('area');
+    /* Route::put('/area/{area}', [AreaController::class, 'update'])->name('area.update');
+    Route::resource('area', AreaController::class)->except(['update']); */
+    Route::resource('area', AreaController::class);
+
 
 <<<<<<< HEAD
 

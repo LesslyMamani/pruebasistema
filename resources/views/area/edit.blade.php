@@ -1,5 +1,6 @@
 @extends('dashboard.app')
 
+
 @section('content')
 <form action="{{ route('area.update', $area) }}" method="POST">
     @csrf

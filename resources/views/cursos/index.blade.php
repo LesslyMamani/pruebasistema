@@ -185,6 +185,7 @@
                                     <option value="{{ $area->id }}"
                                         {{ old('id_area', $curso->id) == $area->id ? 'selected' : '' }}>
                                         {{ $area->nombre }}
+
                                     </option>
                                 @endforeach
                             </select>

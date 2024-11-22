@@ -11,6 +11,7 @@
             <!-- Nav Menu -->
             <div class="menu-bar">
                 <ul class="menu-bar__one">
+
                     <li class="{{ Route::is('dashboard') ? 'active' : '' }}"><a href="{{ route('dashboard') }}"><span
                                 class="menu-bar__text"><span class="nftmax-menu-icon nftmax-svg-icon__v1"><svg
                                         class="nftmax-svg-icon" xmlns="http://www.w3.org/2000/svg" width="16"
