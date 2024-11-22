@@ -1,5 +1,12 @@
 @extends('dashboard.app')
+<style>
+    .nftmax-dsinner {
+        width: 75vw; /* 100% del ancho de la ventana del navegador */
+        height: 100vh; /* 100% de la altura de la ventana del navegador */
+        /* Fondo blanco, puedes personalizarlo */
+    }
 
+    </style>
 @section('content')
     <section class="nftmax-adashboard nftmax-show">
         <div class="container">
@@ -10,8 +17,7 @@
                             <div class="nftmax-table mg-top-100">
                                 <div class="nftmax-table__heading">
                                     <h3 class="nftmax-table__title mb-0">Listado de Expositores</h3>
-                                    <button class="btn btn-primary" data-bs-toggle="modal"
-                                        data-bs-target="#crearUsuarioModal">Crear Nuevo Expositor</button>
+
                                 </div>
 
                                 <!-- Tabla -->
