@@ -9,23 +9,28 @@ class Usuario extends Model
 {
     use HasFactory;
 
-    protected $table = 'usuarios'; // Nombre de la tabla
-
-    protected $primaryKey = 'id_usuario'; // Llave primaria personalizada
-
-    public $timestamps = false; // Desactivar timestamps (created_at y updated_at)
-
+    // Definir los campos que son asignables masivamente
     protected $fillable = [
-        'nombre_usuario',
-        'contrasena',
         'nombre',
         'apellido_p',
         'apellido_m',
+        'estado',
         'carnet',
+        'expedido',
         'fecha_nac',
-        'correo',
         'telefono',
         'nombre_rol',
-        'nombre_area',
+        'nombre_area'
     ];
+
+    // Especificar la tabla si no es el plural de 'Usuario'
+    protected $table = 'usuarios';
+
+    // Definir la clave primaria
+    protected $primaryKey = 'id_usuario';
+
+    // Desactivar el manejo automático de timestamps (si lo prefieres)
+    public $timestamps = true;
+
+    // Funciones de validación y otras configuraciones pueden ser añadidas según sea necesario
 }

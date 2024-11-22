@@ -1,5 +1,3 @@
-<!-- resources/views/partials/create_user_form.blade.php -->
-
 <div class="modal fade" id="createUserModal" tabindex="-1" aria-labelledby="createUserModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <form action="{{ route('usuarios.store') }}" method="POST">
@@ -10,21 +8,6 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label for="nombre_usuario" class="form-label">Nombre de Usuario</label>
-                                <input type="text" class="form-control" id="nombre_usuario" name="nombre_usuario"
-                                    required>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label for="contrasena" class="form-label">Contraseña</label>
-                                <input type="password" class="form-control" id="contrasena" name="contrasena" required>
-                            </div>
-                        </div>
-                    </div>
                     <div class="mb-3">
                         <label for="nombre" class="form-label">Nombre</label>
                         <input type="text" class="form-control" id="nombre" name="nombre" required>
@@ -44,55 +27,53 @@
                         </div>
                     </div>
                     <div class="mb-3">
-                        <label for="ative" class="form-label">Estado</label>
-                        <input type="number" class="form-control" id="ative" name="ative" required>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="mb-3">
-                                <label for="carnet" class="form-label">Carnet</label>
-                                <input type="number" class="form-control" id="carnet" name="carnet" required>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="mb-3">
-                                <label for="fecha_nac" class="form-label">Fecha Nac</label>
-                                <input type="date" class="form-control" id="fecha_nac" name="fecha_nac" required>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="mb-3">
-                                <label for="telefono" class="form-label">Teléfono</label>
-                                <input type="number" class="form-control" id="telefono" name="telefono" required>
-                            </div>
-                        </div>
+                        <label for="estado" class="form-label">Estado</label>
+                        <select class="form-select" id="estado" name="estado" required>
+                            <option value="1">Activo</option>
+                            <option value="0">Inactivo</option>
+                        </select>
                     </div>
                     <div class="mb-3">
-                        <label for="correo" class="form-label">Correo</label>
-                        <input type="email" class="form-control" id="correo" name="correo" required>
+                        <label for="carnet" class="form-label">Carnet</label>
+                        <input type="number" class="form-control" id="carnet" name="carnet" required>
                     </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label for="nombre_rol" class="form-label">Rol</label>
-                                <select class="form-select" id="nombre_rol" name="nombre_rol" required>
-                                    <option value="Admin">Admin</option>
-                                    <option value="Usuario">Usuario</option>
-                                    <option value="Expositor">Expositor</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label for="nombre_area" class="form-label">Área</label>
-                                <select class="form-select" id="nombre_area" name="nombre_area" required>
-                                    <option value="Docente">Docente</option>
-                                    <option value="Administrativo">Administrativo</option>
-                                    <option value="Externo">Externo</option>
-                                    <option value="Estudiante">Estudiante</option>
-                                </select>
-                            </div>
-                        </div>
+                    <div class="mb-3">
+                        <label for="expedido" class="form-label">Expedido</label>
+                        <select class="form-select" id="expedido" name="expedido" required>
+                            <option value="BN">BN</option>
+                            <option value="CH">CH</option>
+                            <option value="CB">CB</option>
+                            <option value="LP">LP</option>
+                            <option value="OR">OR</option>
+                            <option value="PA">PA</option>
+                            <option value="PT">PT</option>
+                            <option value="SC">SC</option>
+                            <option value="TJ">TJ</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="fecha_nac" class="form-label">Fecha Nac</label>
+                        <input type="date" class="form-control" id="fecha_nac" name="fecha_nac" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="telefono" class="form-label">Teléfono</label>
+                        <input type="number" class="form-control" id="telefono" name="telefono" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="nombre_rol" class="form-label">Rol</label>
+                        <select class="form-select" id="nombre_rol" name="nombre_rol" required>
+                            <option value="Usuario">Usuario</option>
+                            <option value="Expositor">Expositor</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="nombre_area" class="form-label">Área</label>
+                        <select class="form-select" id="nombre_area" name="nombre_area" required>
+                            <option value="Docente">Docente</option>
+                            <option value="Administrativo">Administrativo</option>
+                            <option value="Externo">Externo</option>
+                            <option value="Estudiante">Estudiante</option>
+                        </select>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -105,13 +86,22 @@
 </div>
 
 @push('scripts')
-    <script>
-        // Escuchar el evento de cierre del modal para limpiar los campos
-        document.getElementById('createUserModal').addEventListener('hidden.bs.modal', function() {
-            // Obtener todos los campos del formulario dentro del modal
-            const form = this.querySelector('form');
-            form.reset(); // Reinicia todos los campos del formulario
-        });
+<script>
+    // Verificar si hay un mensaje de éxito o error desde la sesión
+    @if(session('success'))
+        document.getElementById('resultMessage').innerText = "{{ session('success') }}";
+        $('#resultModal').modal('show');
+    @elseif(session('error'))
+        document.getElementById('resultMessage').innerText = "{{ session('error') }}";
+        $('#resultModal').modal('show');
+    @endif
+
+    // Escuchar el evento de cierre del modal para limpiar los campos
+    document.getElementById('createUserModal').addEventListener('hidden.bs.modal', function () {
+        // Obtener todos los campos del formulario dentro del modal
+        const form = this.querySelector('form');
+        form.reset(); // Reinicia todos los campos del formulario
+    });
 
         // Opcional: limpiar también al abrir, si es necesario
         document.getElementById('createUserModal').addEventListener('shown.bs.modal', function() {

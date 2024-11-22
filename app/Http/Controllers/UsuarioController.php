@@ -35,26 +35,46 @@ class UsuarioController extends Controller
     // Guardar un usuario
     public function store(Request $request)
     {
+        // Validar los datos de entrada
         $request->validate([
-            'nombre_usuario' => 'required|string|unique:usuarios,nombre_usuario',
-            'contrasena' => 'required|string',
-            'nombre' => 'required|regex:/^[a-zA-Z]+$/',
-            'apellido_p' => 'required|regex:/^[a-zA-Z]+$/',
-            'apellido_m' => 'required|regex:/^[a-zA-Z]+$/',
-            'ative' => 'required|in:1,0',
-            'carnet' => 'required|digits_between:1,50|unique:usuarios,carnet',
-            'correo' => 'nullable|email|unique:usuarios,correo',
+            'nombre' => 'required|regex:/^[A-Za-záéíóúÁÉÍÓÚüÜñÑ]+$/',
+            'apellido_p' => 'required|regex:/^[A-Za-záéíóúÁÉÍÓÚüÜñÑ]+$/',
+            'apellido_m' => 'required|regex:/^[A-Za-záéíóúÁÉÍÓÚüÜñÑ]+$/',
+            'estado' => 'required|in:1,0',
+            'carnet' => 'required|unique:usuarios,carnet|regex:/^[0-9]+$/',
+            'expedido' => 'required|in:BN,CH,CB,LP,OR,PA,PT,SC,TJ',
             'fecha_nac' => 'nullable|date',
             'telefono' => 'nullable|string',
-            'nombre_rol' => 'required|in:Admin,Usuario,Expositor',
+            'nombre_rol' => 'required|in:Usuario,Expositor',
             'nombre_area' => 'required|in:Docente,Administrativo,Externo,Estudiante',
         ]);
 
         try {
-            $usuario = Usuario::create($request->all());
-            return response()->json(['mensaje' => 'Usuario creado', 'usuario' => $usuario], 201);
+            // Crear el nuevo usuario
+            $usuario = new Usuario();
+            $usuario->nombre = $request->nombre;
+            $usuario->apellido_p = $request->apellido_p;
+            $usuario->apellido_m = $request->apellido_m;
+            $usuario->estado = $request->estado;
+            $usuario->carnet = $request->carnet;
+            $usuario->expedido = $request->expedido;
+            $usuario->fecha_nac = $request->fecha_nac;
+            $usuario->telefono = $request->telefono;
+            $usuario->nombre_rol = $request->nombre_rol;
+            $usuario->nombre_area = $request->nombre_area;
+
+            // Asignar manualmente las fechas de creación y actualización
+            $usuario->created_at = now();
+            $usuario->updated_at = now();
+
+            // Guardar el usuario
+            $usuario->save();
+
+            // Redirigir con mensaje de éxito
+            return redirect()->route('usuarios.index')->with('success', 'Usuario creado correctamente');
         } catch (\Throwable $th) {
-            return response()->json(['mensaje' => 'Error al crear usuario'], 500);
+            // Redirigir con mensaje de error
+            return redirect()->route('usuarios.index')->with('error', 'Error al crear el usuario: ' . $th->getMessage());
         }
     }
 
@@ -79,22 +99,23 @@ class UsuarioController extends Controller
             return response()->json(['mensaje' => 'Usuario no encontrado'], 404);
         }
 
+        // Validar los datos de entrada
         $request->validate([
-            'nombre_usuario' => 'string|unique:usuarios,nombre_usuario,' . $id_usuario . ',id_usuario',
-            'contrasena' => 'string',
-            'nombre' => 'string|regex:/^[a-zA-Z]+$/',
-            'apellido_p' => 'string|regex:/^[a-zA-Z]+$/',
-            'apellido_m' => 'string|regex:/^[a-zA-Z]+$/',
-            'ative' => 'in:1,0',
-            'carnet' => 'digits_between:1,50|unique:usuarios,carnet,' . $id_usuario . ',id_usuario',
-            'correo' => 'nullable|email|unique:usuarios,correo,' . $id_usuario . ',id_usuario',
+            'nombre' => 'string|regex:/^[A-Za-záéíóúÁÉÍÓÚüÜñÑ]+$/',
+            'apellido_p' => 'string|regex:/^[A-Za-záéíóúÁÉÍÓÚüÜñÑ]+$/',
+            'apellido_m' => 'string|regex:/^[A-Za-záéíóúÁÉÍÓÚüÜñÑ]+$/',
+            'estado' => 'in:1,0',
+            'carnet' => 'regex:/^[0-9]+$/|unique:usuarios,carnet,' . $id_usuario . ',id_usuario',
+            'expedido' => 'in:BN,CH,CB,LP,OR,PA,PT,SC,TJ',
             'telefono' => 'nullable|string',
-            'nombre_rol' => 'in:Admin,Usuario,Expositor',
+            'nombre_rol' => 'in:Usuario,Expositor',
             'nombre_area' => 'in:Docente,Administrativo,Externo,Estudiante',
         ]);
 
+        // Actualizar el usuario
         $usuario->update($request->all());
-        return response()->json(['mensaje' => 'Usuario actualizado', 'usuario' => $usuario]);
+
+        return response()->json(['mensaje' => 'Usuario actualizado correctamente', 'usuario' => $usuario]);
     }
 
     // Eliminar un usuario
