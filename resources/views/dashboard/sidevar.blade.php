@@ -3,7 +3,7 @@
     <div class="admin-menu">
         <!-- Logo -->
         <div class="logo">
-                <img class="nftmax-logo__main" src="img/logo11.png" alt="#" style="width: 150px; height: 150px;">
+            <img class="nftmax-logo__main" src="img/logo11.png" alt="#" style="width: 150px; height: 150px;">
         </div>
         <!-- Author Details -->
         <div class="admin-menu__one">
@@ -28,41 +28,16 @@
                                             d="M8.60156 15.2001H13.4016C13.879 15.2001 14.3368 15.0105 14.6744 14.6729C15.0119 14.3353 15.2016 13.8775 15.2016 13.4001V8.6001H8.60156V15.2001Z">
                                         </path>
                                     </svg></span><span class="menu-bar__name">Dashboard</span></span></a></li>
-                                    
-                                    {{-- USUARIO --}}
-                                    <li class="{{ Route::is('usuarios.index') ? 'active' : '' }}">
-                                        <a href="{{ route('usuarios.index') }}">
-                                           <span class="menu-bar__name">Usuario</span>
-                                        </a>
-                                    </li>
 
-<<<<<<< HEAD
-                    <li class="{{ Route::is('prueba') ? 'active' : '' }}"><a href="{{ route('prueba') }}">
-                        <span class="menu-bar__text"><span class="nftmax-menu-icon nftmax-svg-icon__v2"><svg
-
-=======
-                    <li class="{{ Route::is('prueba') ? 'active' : '' }}"><a href="{{ route('prueba') }}"><span
-                                class="menu-bar__text"><span class="nftmax-menu-icon nftmax-svg-icon__v2"><svg
->>>>>>> fed6d91edcee08eca14d456509a3e8c1587ebe24
-                                        class="nftmax-svg-icon" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M8.40093 8.39892C8.07534 8.74593 7.8023 9.13874 7.59052 9.56484L13.3422 15.3165C13.4732 15.4475 13.651 15.5211 13.8362 15.5211C14.0215 15.5211 14.1992 15.4475 14.3303 15.3165L15.3185 14.3283C15.3834 14.2634 15.4349 14.1864 15.47 14.1016C15.5052 14.0168 15.5232 13.9259 15.5232 13.8342C15.5232 13.7424 15.5052 13.6515 15.47 13.5667C15.4349 13.482 15.3834 13.4049 15.3185 13.34L9.56685 7.5899C9.13999 7.79984 8.74699 8.07254 8.40093 8.39892Z">
-                                        </path>
-                                        <path
-                                            d="M4.94216 4.94003C4.41373 5.43043 3.80202 5.8226 3.1358 6.09809L6.74747 9.70976C7.02543 9.04469 7.41799 8.43359 7.90728 7.90427C8.43576 7.4139 9.04746 7.02168 9.71363 6.74604L6.10179 3.13507C5.82373 3.79989 5.43125 4.41079 4.94216 4.94003Z">
-                                        </path>
-                                        <path
-                                            d="M7.4116 0.494075L6.42351 1.48216C6.15066 1.75501 6.15066 2.19739 6.42351 2.47024L10.3758 6.42256C10.6487 6.69541 11.0911 6.69541 11.3639 6.42256L12.352 5.43448C12.6249 5.16163 12.6249 4.71925 12.352 4.4464L8.39968 0.494075C8.12683 0.221224 7.68445 0.221224 7.4116 0.494075Z">
-                                        </path>
-                                        <path
-                                            d="M1.48209 6.42236L0.49401 7.41044C0.221159 7.68329 0.221159 8.12567 0.49401 8.39852L4.44633 12.3508C4.71919 12.6237 5.16156 12.6237 5.43441 12.3508L6.4225 11.3628C6.69535 11.0899 6.69535 10.6475 6.4225 10.3747L2.47017 6.42236C2.19732 6.14951 1.75494 6.14951 1.48209 6.42236Z">
-                                        </path>
-                                    </svg></span><span class="menu-bar__name">prueba</span><span
-                                    class="menu-bar__count nft-gr-primary">19</span></span></a></li>
-
+                    {{-- USUARIO --}}
+                    <li class="{{ Route::is('usuarios.index') ? 'active' : '' }}">
+                        <a href="{{ route('usuarios.index') }}">
+                            <span class="menu-bar__name">Usuario</span>
+                        </a>
+                    </li>
                     <li class="{{ Route::is('area.index') ? 'active' : '' }}"><a href="{{ route('area.index') }}"><span
-                                class="menu-bar__text"><span class="nftmax-menu-icon nftmax-svg-icon__v4"><svg
-                                        class="nftmax-svg-icon" viewBox="0 0 16 13" xmlns="http://www.w3.org/2000/svg">
+                                class="menu-bar__text"><span class="nftmax-menu-icon nftmax-svg-icon__v1"><svg
+                                        class="nftmax-svg-icon" xmlns="http://www.w3.org/2000/svg">
                                         <path
                                             d="M14.0764 6.57306C13.201 6.57306 12.4115 6.56813 11.6219 6.57503C10.998 6.57996 10.8122 6.76339 10.8031 7.37187C10.7981 7.74959 10.7971 8.12828 10.8062 8.506C10.8183 9.04051 11.0303 9.25353 11.5745 9.25945C12.3812 9.26734 13.1879 9.26142 14.0016 9.26142C14.0016 10.1164 14.0905 10.9547 13.9754 11.7663C13.8704 12.5099 13.1172 12.9902 12.2933 12.9922C8.78993 13.0011 5.28652 13.003 1.7831 12.9912C0.778516 12.9873 0.0192745 12.2476 0.0122071 11.2713C-0.00394697 9.0346 -0.00394697 6.79889 0.0122071 4.56221C0.0192745 3.57602 0.773468 2.84623 1.78108 2.84327C5.2845 2.83341 8.78791 2.8344 12.2913 2.84327C13.3131 2.84525 14.0481 3.55333 14.0743 4.54249C14.0905 5.19633 14.0764 5.85215 14.0764 6.57306Z">
                                         </path>
@@ -74,9 +49,9 @@
                                         </path>
                                     </svg></span><span class="menu-bar__name">Area</span></span></a></li>
 
-                    <li class="{{ Route::is('curso') ? 'active' : '' }}"><a href="{{ route('curso') }}"><span class="menu-bar__text"><span
-                                    class="nftmax-menu-icon nftmax-svg-icon__v5"><svg class="nftmax-svg-icon"
-                                        viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg">
+                    <li class="{{ Route::is('curso') ? 'active' : '' }}"><a href="{{ route('curso') }}"><span
+                                class="menu-bar__text"><span class="nftmax-menu-icon nftmax-svg-icon__v5"><svg
+                                        class="nftmax-svg-icon" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg">
                                         <path
                                             d="M14.1755 7.88376L11.9493 9.56253L12.7948 12.266C12.9314 12.6853 12.9331 13.1389 12.7997 13.5593C12.6663 13.9797 12.4049 14.3444 12.0544 14.5988C11.7099 14.8615 11.2925 15.0022 10.8643 15C10.436 14.9978 10.02 14.8528 9.67807 14.5866L7.50125 12.9323L5.3238 14.5846C4.97996 14.8458 4.56476 14.9876 4.13792 14.9898C3.71108 14.9919 3.29457 14.8542 2.94827 14.5966C2.60197 14.3389 2.34373 13.9745 2.21066 13.5557C2.0776 13.1369 2.07657 12.6854 2.20772 12.266L3.05318 9.56253L0.826957 7.88376C0.483556 7.62452 0.22828 7.25987 0.0975914 6.84188C-0.0330973 6.4239 -0.0325136 5.97396 0.0992584 5.55633C0.23103 5.13871 0.487251 4.77476 0.831323 4.51648C1.17539 4.25819 1.58972 4.11878 2.01511 4.11815H4.74974L5.57957 1.44762C5.71006 1.02726 5.96649 0.660548 6.31187 0.400372C6.65724 0.140196 7.07372 0 7.50125 0C7.92878 0 8.34526 0.140196 8.69064 0.400372C9.03601 0.660548 9.29244 1.02726 9.42293 1.44762L10.2528 4.11815H12.9849C13.4103 4.11878 13.8246 4.25819 14.1687 4.51648C14.5127 4.77476 14.769 5.13871 14.9007 5.55633C15.0325 5.97396 15.0331 6.4239 14.9024 6.84188C14.7717 7.25987 14.5164 7.62452 14.173 7.88376H14.1755Z">
                                         </path>
@@ -84,9 +59,9 @@
 
                                     </svg></span><span class="menu-bar__name">Cursos</span></span></a>
                     </li>
-                    <li  class="{{ Route::is('expositor') ? 'active' : '' }}"><a href="{{ route('expositor') }}"><span class="menu-bar__text"><span
-                                    class="nftmax-menu-icon nftmax-svg-icon__v6"><svg class="nftmax-svg-icon"
-                                        viewBox="0 0 16 13"xmlns="http://www.w3.org/2000/svg">
+                    <li class="{{ Route::is('expositor') ? 'active' : '' }}"><a href="{{ route('expositor') }}"><span
+                                class="menu-bar__text"><span class="nftmax-menu-icon nftmax-svg-icon__v6"><svg
+                                        class="nftmax-svg-icon" viewBox="0 0 16 13"xmlns="http://www.w3.org/2000/svg">
                                         <path
                                             d="M13.7481 5.26312C13.5414 5.97928 13.3729 6.66044 13.1345 7.31719C13.0759 7.47914 12.7927 7.65899 12.6104 7.66062C10.4807 7.68503 8.3509 7.67689 6.22115 7.67771C5.90621 7.67771 5.7052 7.52227 5.63277 7.22116C5.29585 5.81082 4.95567 4.4013 4.63422 2.9877C4.53656 2.56045 4.73106 2.29677 5.14285 2.29433C6.87872 2.28294 8.61377 2.28945 10.3928 2.28945C10.3716 3.2115 10.6231 4.01636 11.3205 4.63079C12.0049 5.23464 12.813 5.41531 13.7481 5.26312Z">
                                         </path>

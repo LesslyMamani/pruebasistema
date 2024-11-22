@@ -182,7 +182,8 @@
                             <select class="form-control" id="id_area" name="id_area" required>
                                 <option value="" disabled>Seleccione un área</option>
                                 @foreach ($areas as $area)
-                                    <option value="{{ $area->id }}" {{ old('id_area', $curso->id) == $area->id ? 'selected' : '' }}>
+                                    <option value="{{ $area->id }}"
+                                        {{ old('id_area', $curso->id) == $area->id ? 'selected' : '' }}>
                                         {{ $area->nombre }}
                                     </option>
                                 @endforeach
@@ -218,38 +219,37 @@
         </div>
     </div>
     @if ($errors->any())
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var crearCursoModal = new bootstrap.Modal(document.getElementById('crearCursoModal'));
-            crearCursoModal.show();
-        });
-    </script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                var crearCursoModal = new bootstrap.Modal(document.getElementById('crearCursoModal'));
+                crearCursoModal.show();
+            });
+        </script>
     @endif
 
     <script>
-    document.getElementById('editarCursoModal').addEventListener('show.bs.modal', function(event) {
-    var button = event.relatedTarget;
-    var id = button.getAttribute('data-id');
-    var nombre = button.getAttribute('data-nombre');
-    var idArea = button.getAttribute('data-id_area');
-    var duracion = button.getAttribute('data-duracion');
-    var fechaInicio = button.getAttribute('data-fecha_inicio');
-    var fechaFin = button.getAttribute('data-fecha_fin');
-    // Este es el ID del área
+        document.getElementById('editarCursoModal').addEventListener('show.bs.modal', function(event) {
+            var button = event.relatedTarget;
+            var id = button.getAttribute('data-id');
+            var nombre = button.getAttribute('data-nombre');
+            var idArea = button.getAttribute('data-id_area');
+            var duracion = button.getAttribute('data-duracion');
+            var fechaInicio = button.getAttribute('data-fecha_inicio');
+            var fechaFin = button.getAttribute('data-fecha_fin');
+            // Este es el ID del área
 
-    var modal = this;
-    modal.querySelector('#nombre').value = nombre;
-    modal.querySelector('#duracion').value = duracion;
-    modal.querySelector('#fecha_inicio').value = fechaInicio;
-    modal.querySelector('#fecha_fin').value = fechaFin;
+            var modal = this;
+            modal.querySelector('#nombre').value = nombre;
+            modal.querySelector('#duracion').value = duracion;
+            modal.querySelector('#fecha_inicio').value = fechaInicio;
+            modal.querySelector('#fecha_fin').value = fechaFin;
 
-    // Asigna el ID del área correctamente en el select
-    modal.querySelector('#id_area').value = idArea;  // Establece el valor del select
+            // Asigna el ID del área correctamente en el select
+            modal.querySelector('#id_area').value = idArea; // Establece el valor del select
 
-    // El formulario de edición debe tener la acción correcta
-    var formEditar = modal.querySelector('form');
-    formEditar.action = "/curso/" + id;  // Se usa la URL para la actualización
-});
-
+            // El formulario de edición debe tener la acción correcta
+            var formEditar = modal.querySelector('form');
+            formEditar.action = "/curso/" + id; // Se usa la URL para la actualización
+        });
     </script>
 @endsection
