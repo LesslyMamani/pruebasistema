@@ -22,7 +22,7 @@ use App\Http\Controllers\expositorController;
 //     return view('welcome');
 // });
 
-Route::get('/dashboard',[MetricasController::class,'index'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard', [MetricasController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -36,19 +36,18 @@ Route::middleware('auth')->group(function () {
     Route::resource('area', AreaController::class);
 
 
-<<<<<<< HEAD
 
     // Listar usuarios
     Route::get('/usuarios', [UsuarioController::class, 'index'])->name('usuarios.index');
 
-        // Editar usuario
+    // Editar usuario
     Route::get('/usuarios/{id}/edit', [UsuarioController::class, 'edit'])->name('usuarios.edit');
-   Route::put('/usuarios/{id}', [UsuarioController::class, 'update'])->name('usuarios.update');
+    Route::put('/usuarios/{id}', [UsuarioController::class, 'update'])->name('usuarios.update');
 
 
     // Crear usuario
     Route::get('/usuarios/create', [UsuarioController::class, 'create'])->name('usuarios.create');
-Route::post('/usuarios', [UsuarioController::class, 'store'])->name('usuarios.store');
+    Route::post('/usuarios', [UsuarioController::class, 'store'])->name('usuarios.store');
 
     // Ver detalles de un usuario
     Route::get('/usuarios/{id}', [UsuarioController::class, 'show'])->name('usuarios.show');
@@ -56,8 +55,6 @@ Route::post('/usuarios', [UsuarioController::class, 'store'])->name('usuarios.st
     // Eliminar usuario
     Route::delete('/usuarios/{id}', [UsuarioController::class, 'destroy'])->name('usuarios.destroy');
 
-=======
->>>>>>> fed6d91edcee08eca14d456509a3e8c1587ebe24
     Route::get('/area', [areaController::class, 'index'])->name('area');
     Route::resource('area', AreaController::class);
 
@@ -66,8 +63,7 @@ Route::post('/usuarios', [UsuarioController::class, 'store'])->name('usuarios.st
 
     Route::resource('expositor', expositorController::class);
     Route::get('/expositor', [expositorController::class, 'index'])->name('expositor');
-
 });
 
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
