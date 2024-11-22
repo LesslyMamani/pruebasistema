@@ -3,7 +3,7 @@
     <div class="admin-menu">
         <!-- Logo -->
         <div class="logo">
-                <img class="nftmax-logo__main" src="img/logo11.png" alt="#" style="width: 150px; height: 150px;">
+            <img class="nftmax-logo__main" src="img/logo11.png" alt="#" style="width: 150px; height: 150px;">
         </div>
         <!-- Author Details -->
         <div class="admin-menu__one">
@@ -28,22 +28,46 @@
                                             d="M8.60156 15.2001H13.4016C13.879 15.2001 14.3368 15.0105 14.6744 14.6729C15.0119 14.3353 15.2016 13.8775 15.2016 13.4001V8.6001H8.60156V15.2001Z">
                                         </path>
                                     </svg></span><span class="menu-bar__name">Dashboard</span></span></a></li>
-                                    
-                                    {{-- USUARIO --}}
-                                    <li class="{{ Route::is('usuarios.index') ? 'active' : '' }}">
-                                        <a href="{{ route('usuarios.index') }}">
-                                           <span class="menu-bar__name">Usuario</span>
-                                        </a>
-                                    </li>
 
-<<<<<<< HEAD
+
+
+                    {{-- USUARIO --}}
+                    <li class="{{ Route::is('usuarios.index') ? 'active' : '' }}">
+                        <a href="{{ route('usuarios.index') }}">
+                            <span class="menu-bar__text">
+                                <span class="nftmax-menu-icon nftmax-svg-icon__v10">
+                                    <svg class="nftmax-svg-icon" viewBox="0 0 15 20" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M10.8692 11.6667H4.13085C3.03569 11.668 1.98576 12.1036 1.21136 12.878C0.436961 13.6524 0.00132319 14.7023 0 15.7975V20H15.0001V15.7975C14.9987 14.7023 14.5631 13.6524 13.7887 12.878C13.0143 12.1036 11.9644 11.668 10.8692 11.6667Z">
+                                        </path>
+                                        <path
+                                            d="M7.49953 10C10.261 10 12.4995 7.76145 12.4995 5.00002C12.4995 2.23858 10.261 0 7.49953 0C4.7381 0 2.49951 2.23858 2.49951 5.00002C2.49951 7.76145 4.7381 10 7.49953 10Z">
+                                        </path>
+                                    </svg></span>
+                                <span class="menu-bar__name">Usuarios</span>
+                            </span>
+                        </a>
+                    </li>
+                    {{-- INSCRIPCION --}}
+                    <li class="{{ Route::is('usuarios.index') ? 'active' : '' }}">
+                        <a href="{{ route('usuarios.index') }}">
+                            <span class="menu-bar__text">
+                                <span class="nftmax-menu-icon nftmax-svg-icon__v10">
+                                    <svg class="nftmax-svg-icon" viewBox="0 0 15 20" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M10.8692 11.6667H4.13085C3.03569 11.668 1.98576 12.1036 1.21136 12.878C0.436961 13.6524 0.00132319 14.7023 0 15.7975V20H15.0001V15.7975C14.9987 14.7023 14.5631 13.6524 13.7887 12.878C13.0143 12.1036 11.9644 11.668 10.8692 11.6667Z">
+                                        </path>
+                                        <path
+                                            d="M7.49953 10C10.261 10 12.4995 7.76145 12.4995 5.00002C12.4995 2.23858 10.261 0 7.49953 0C4.7381 0 2.49951 2.23858 2.49951 5.00002C2.49951 7.76145 4.7381 10 7.49953 10Z">
+                                        </path>
+                                    </svg></span>
+                                <span class="menu-bar__name">Inscripcion</span>
+                            </span>
+                        </a>
+                    </li>
+
                     <li class="{{ Route::is('prueba') ? 'active' : '' }}"><a href="{{ route('prueba') }}">
-                        <span class="menu-bar__text"><span class="nftmax-menu-icon nftmax-svg-icon__v2"><svg
-
-=======
-                    <li class="{{ Route::is('prueba') ? 'active' : '' }}"><a href="{{ route('prueba') }}"><span
-                                class="menu-bar__text"><span class="nftmax-menu-icon nftmax-svg-icon__v2"><svg
->>>>>>> fed6d91edcee08eca14d456509a3e8c1587ebe24
+                            <span class="menu-bar__text"><span class="nftmax-menu-icon nftmax-svg-icon__v2"><svg
                                         class="nftmax-svg-icon" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
                                         <path
                                             d="M8.40093 8.39892C8.07534 8.74593 7.8023 9.13874 7.59052 9.56484L13.3422 15.3165C13.4732 15.4475 13.651 15.5211 13.8362 15.5211C14.0215 15.5211 14.1992 15.4475 14.3303 15.3165L15.3185 14.3283C15.3834 14.2634 15.4349 14.1864 15.47 14.1016C15.5052 14.0168 15.5232 13.9259 15.5232 13.8342C15.5232 13.7424 15.5052 13.6515 15.47 13.5667C15.4349 13.482 15.3834 13.4049 15.3185 13.34L9.56685 7.5899C9.13999 7.79984 8.74699 8.07254 8.40093 8.39892Z">
@@ -74,9 +98,9 @@
                                         </path>
                                     </svg></span><span class="menu-bar__name">Area</span></span></a></li>
 
-                    <li class="{{ Route::is('curso') ? 'active' : '' }}"><a href="{{ route('curso') }}"><span class="menu-bar__text"><span
-                                    class="nftmax-menu-icon nftmax-svg-icon__v5"><svg class="nftmax-svg-icon"
-                                        viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg">
+                    <li class="{{ Route::is('curso') ? 'active' : '' }}"><a href="{{ route('curso') }}"><span
+                                class="menu-bar__text"><span class="nftmax-menu-icon nftmax-svg-icon__v5"><svg
+                                        class="nftmax-svg-icon" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg">
                                         <path
                                             d="M14.1755 7.88376L11.9493 9.56253L12.7948 12.266C12.9314 12.6853 12.9331 13.1389 12.7997 13.5593C12.6663 13.9797 12.4049 14.3444 12.0544 14.5988C11.7099 14.8615 11.2925 15.0022 10.8643 15C10.436 14.9978 10.02 14.8528 9.67807 14.5866L7.50125 12.9323L5.3238 14.5846C4.97996 14.8458 4.56476 14.9876 4.13792 14.9898C3.71108 14.9919 3.29457 14.8542 2.94827 14.5966C2.60197 14.3389 2.34373 13.9745 2.21066 13.5557C2.0776 13.1369 2.07657 12.6854 2.20772 12.266L3.05318 9.56253L0.826957 7.88376C0.483556 7.62452 0.22828 7.25987 0.0975914 6.84188C-0.0330973 6.4239 -0.0325136 5.97396 0.0992584 5.55633C0.23103 5.13871 0.487251 4.77476 0.831323 4.51648C1.17539 4.25819 1.58972 4.11878 2.01511 4.11815H4.74974L5.57957 1.44762C5.71006 1.02726 5.96649 0.660548 6.31187 0.400372C6.65724 0.140196 7.07372 0 7.50125 0C7.92878 0 8.34526 0.140196 8.69064 0.400372C9.03601 0.660548 9.29244 1.02726 9.42293 1.44762L10.2528 4.11815H12.9849C13.4103 4.11878 13.8246 4.25819 14.1687 4.51648C14.5127 4.77476 14.769 5.13871 14.9007 5.55633C15.0325 5.97396 15.0331 6.4239 14.9024 6.84188C14.7717 7.25987 14.5164 7.62452 14.173 7.88376H14.1755Z">
                                         </path>
@@ -84,9 +108,9 @@
 
                                     </svg></span><span class="menu-bar__name">Cursos</span></span></a>
                     </li>
-                    <li  class="{{ Route::is('expositor') ? 'active' : '' }}"><a href="{{ route('expositor') }}"><span class="menu-bar__text"><span
-                                    class="nftmax-menu-icon nftmax-svg-icon__v6"><svg class="nftmax-svg-icon"
-                                        viewBox="0 0 16 13"xmlns="http://www.w3.org/2000/svg">
+                    <li class="{{ Route::is('expositor') ? 'active' : '' }}"><a href="{{ route('expositor') }}"><span
+                                class="menu-bar__text"><span class="nftmax-menu-icon nftmax-svg-icon__v6"><svg
+                                        class="nftmax-svg-icon" viewBox="0 0 16 13"xmlns="http://www.w3.org/2000/svg">
                                         <path
                                             d="M13.7481 5.26312C13.5414 5.97928 13.3729 6.66044 13.1345 7.31719C13.0759 7.47914 12.7927 7.65899 12.6104 7.66062C10.4807 7.68503 8.3509 7.67689 6.22115 7.67771C5.90621 7.67771 5.7052 7.52227 5.63277 7.22116C5.29585 5.81082 4.95567 4.4013 4.63422 2.9877C4.53656 2.56045 4.73106 2.29677 5.14285 2.29433C6.87872 2.28294 8.61377 2.28945 10.3928 2.28945C10.3716 3.2115 10.6231 4.01636 11.3205 4.63079C12.0049 5.23464 12.813 5.41531 13.7481 5.26312Z">
                                         </path>
@@ -142,16 +166,22 @@
             <!-- Nav Menu -->
             <div class="menu-bar">
                 <ul class="menu-bar__one">
-                    <li><a href="profile.html"><span class="menu-bar__text"><span
-                                    class="nftmax-menu-icon nftmax-svg-icon__v10"><svg class="nftmax-svg-icon"
-                                        viewBox="0 0 15 20" xmlns="http://www.w3.org/2000/svg">
+                    <li>
+                        <a href="profile.html">
+                            <span class="menu-bar__text">
+                                <span class="nftmax-menu-icon nftmax-svg-icon__v10">
+                                    <svg class="nftmax-svg-icon" viewBox="0 0 15 20"
+                                        xmlns="http://www.w3.org/2000/svg">
                                         <path
                                             d="M10.8692 11.6667H4.13085C3.03569 11.668 1.98576 12.1036 1.21136 12.878C0.436961 13.6524 0.00132319 14.7023 0 15.7975V20H15.0001V15.7975C14.9987 14.7023 14.5631 13.6524 13.7887 12.878C13.0143 12.1036 11.9644 11.668 10.8692 11.6667Z">
                                         </path>
                                         <path
                                             d="M7.49953 10C10.261 10 12.4995 7.76145 12.4995 5.00002C12.4995 2.23858 10.261 0 7.49953 0C4.7381 0 2.49951 2.23858 2.49951 5.00002C2.49951 7.76145 4.7381 10 7.49953 10Z">
                                         </path>
-                                    </svg></span><span class="menu-bar__name">My Profile</span> </span></a>
+                                    </svg></span>
+                                <span class="menu-bar__name">My Profile</span>
+                            </span>
+                        </a>
                     </li>
                     <li><a href="settings.html"><span class="menu-bar__text"><span
                                     class="nftmax-menu-icon nftmax-svg-icon__v11"><svg class="nftmax-svg-icon"

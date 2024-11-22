@@ -3,6 +3,23 @@
 @section('content')
     <div>
         <h4>Usuarios</h4>
+        <!-- Alertas -->
+        <div class="container mt-3">
+            @if(session('success'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{ session('success') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
+
+            @if(session('error'))
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    {{ session('error') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
+        </div>   
+
         <section class="nftmax-adashboard nftmax-show">
             <div class="container">
                 <div class="row">
@@ -24,6 +41,7 @@
                                                 <th>Nombre Completo</th>
                                                 <th>Estado</th>
                                                 <th>Carnet</th>
+                                                <th>Expedido</th>
                                                 <th>Fecha Nac</th>
                                                 <th>Teléfono</th>
                                                 <th>Rol</th>
@@ -37,11 +55,12 @@
                                                     <td>{{ $use->id_usuario }}</td>
                                                     <td>{{ $use->nombre }} {{ $use->apellido_p }} {{ $use->apellido_m }}</td>
                                                     <td>
-                                                        <span class="badge {{ $use->ativo == '1' ? 'bg-success' : 'bg-danger' }}">
-                                                            {{ $use->ativo == '1' ? 'Activo' : 'Inactivo' }}
+                                                        <span class="badge {{ $use->estado == 1 ? 'bg-success' : 'bg-danger' }}">
+                                                            {{ $use->estado == 1 ? 'Activo' : 'Inactivo' }}
                                                         </span>
                                                     </td>
                                                     <td>{{ $use->carnet }}</td>
+                                                    <td>{{ $use->expedido }}</td> <!-- Aquí se muestra el campo 'expedido' -->
                                                     <td>{{ \Carbon\Carbon::parse($use->fecha_nac)->format('d/m/Y') }}</td>
                                                     <td>{{ $use->telefono }}</td>
                                                     <td>{{ $use->nombre_rol }}</td>
@@ -52,12 +71,10 @@
                                                             Editar
                                                         </button>
         
-                                                        <!-- Formulario para eliminar usuario -->
-                                                        <form action="{{ route('usuarios.destroy', $use->id_usuario) }}" method="POST" onsubmit="return confirm('¿Estás seguro de eliminar este usuario?')">
-                                                            @csrf
-                                                            @method('DELETE')
-                                                            <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
-                                                        </form>
+                                                        <!-- Botón para eliminar usuario -->
+                                                        <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteUserModal" data-id="{{ $use->id_usuario }}">
+                                                            Eliminar
+                                                        </button>
                                                     </td>
                                                 </tr>
                                             @endforeach
@@ -78,4 +95,49 @@
 
     <!-- Modal para Editar Usuario -->
     @include('usuarios.edit')
+
+    <!-- Modal para Confirmación de Eliminación con el estilo solicitado -->
+    <div class="modal fade" id="deleteUserModal" tabindex="-1" aria-labelledby="deleteUserModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteUserModalLabel">Confirmar Eliminación</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body nftmax-modal__body modal-body nftmax-close__body">
+                    <div class="nftmax-preview__close">
+                        <div class="nftmax-preview__close-img">
+                            <img src="img/close.png" alt="#">
+                        </div>
+                        <h2 class="nftmax-preview__close-title">
+                            ¿Estás seguro de eliminar este usuario?
+                        </h2>
+                        <div class="nftmax__item-button--group">
+                            <form id="deleteForm" method="POST" action="" onsubmit="return confirm('¿Estás seguro de eliminar este usuario?')">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="nftmax__item-button--single nftmax-btn nftmax-btn__bordered bg radius ">
+                                    Sí, eliminar
+                                </button>
+                            </form>
+                            <button class="nftmax__item-button--single nftmax-btn nftmax-btn__bordered--plus radius" data-bs-dismiss="modal">
+                                <span class="ntfmax__btn-textgr">No, quiero continuar</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script para asignar el ID del usuario a eliminar en el modal -->
+    <script>
+        const deleteModal = document.getElementById('deleteUserModal');
+        deleteModal.addEventListener('show.bs.modal', function (event) {
+            const button = event.relatedTarget; // Botón que activó el modal
+            const userId = button.getAttribute('data-id'); // Obtener el ID del usuario
+            const form = deleteModal.querySelector('#deleteForm');
+            form.action = '/usuarios/' + userId; // Asignar la acción del formulario con el ID del usuario
+        });
+    </script>
 @endsection
