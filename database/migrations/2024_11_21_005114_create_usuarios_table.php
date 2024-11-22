@@ -7,14 +7,15 @@ use Illuminate\Support\Facades\Schema;
 class CreateUsuariosTable extends Migration
 {
     /**
-     * Run the migrations.
+     * Ejecutar las migraciones.
      *
      * @return void
      */
     public function up()
     {
         Schema::create('usuarios', function (Blueprint $table) {
-            $table->id('id_usuario');  
+            $table->engine = 'InnoDB';  // Asegurarse de usar InnoDB
+            $table->id('id_usuario');  // BIGINT UNSIGNED
             $table->string('nombre', 50);
             $table->string('apellido_p', 50);
             $table->string('apellido_m', 50);
@@ -30,12 +31,11 @@ class CreateUsuariosTable extends Migration
             $table->check('apellido_m REGEXP "^[A-Za-záéíóúÁÉÍÓÚüÜñÑ]+$"');
             $table->check('carnet REGEXP "^[0-9]+$"');
             $table->timestamps();
-            
         });
     }
 
     /**
-     * Reverse the migrations.
+     * Deshacer las migraciones.
      *
      * @return void
      */

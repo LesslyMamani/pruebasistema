@@ -14,13 +14,15 @@ class CreateInscripcionesTable extends Migration
     public function up()
     {
         Schema::create('inscripciones', function (Blueprint $table) {
-            $table->engine = 'InnoDB'; // Asegúrate de que use InnoDB
+            $table->engine = 'InnoDB'; // Asegúrate de usar InnoDB
             $table->id('id_inscripcion');
             $table->unsignedBigInteger('id_usuario');  // Relación con usuarios
             $table->unsignedBigInteger('id_curso');   // Relación con cursos
             $table->date('fecha_inscripcion');
             $table->enum('estado', ['Inscrito', 'Completado', 'Cancelado'])->default('Inscrito');
             $table->timestamps();
+
+            // Definir las claves foráneas
             $table->foreign('id_usuario')->references('id_usuario')->on('usuarios')->onDelete('cascade');
             $table->foreign('id_curso')->references('id_curso')->on('cursos')->onDelete('cascade');
         });
