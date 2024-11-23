@@ -112,8 +112,8 @@ class UsuarioController extends Controller
 
         // Actualizar el usuario
         $usuario->update($request->all());
-
-        return response()->json(['mensaje' => 'Usuario actualizado correctamente', 'usuario' => $usuario]);
+        return redirect()->route('usuarios.index')->with('success', 'Usuario creado correctamente');
+        // return response()->json(['mensaje' => 'Usuario actualizado correctamente', 'usuario' => $usuario]);
     }
 
     // Eliminar un usuario
