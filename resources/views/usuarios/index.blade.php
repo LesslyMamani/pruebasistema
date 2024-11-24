@@ -18,7 +18,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             @endif
-        </div>   
+        </div>
 
         <section class="nftmax-adashboard nftmax-show">
             <div class="container">
@@ -32,7 +32,7 @@
                                         Crear Usuario
                                     </button>
                                 </div>
-        
+
                                 <div class="table-responsive mt-3">
                                     <table id="nftmax-table__main" class="table table-bordered table-hover">
                                         <thead class="table-light">
@@ -70,7 +70,7 @@
                                                         <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#editUserModal{{ $use->id_usuario }}">
                                                             Editar
                                                         </button>
-        
+
                                                         <!-- Botón para eliminar usuario -->
                                                         <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteUserModal" data-id="{{ $use->id_usuario }}">
                                                             Eliminar
@@ -87,7 +87,7 @@
                 </div>
             </div>
         </section>
-        
+
     </div>
 
     <!-- Modal para Crear Usuario -->
