@@ -2,9 +2,9 @@
 <style>
     .nftmax-dsinner {
         width: 75vw;
-        /* 100% del ancho de la ventana del navegador */
+
         height: 100vh;
-        /* 100% de la altura de la ventana del navegador */
+
     }
 </style>
 
@@ -190,8 +190,6 @@
                                 @endforeach
                             </select>
                         </div>
-
-
                         <!-- Duración -->
                         <div class="mb-3">
                             <label for="duracion" class="form-label">Duración (hrs)</label>

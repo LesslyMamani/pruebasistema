@@ -32,14 +32,14 @@ class cursoController extends Controller
     {
         // Validación de datos
         $request->validate([
-            'nombre' => 'required|max:100',
+            'nombre' => 'regex:/^[a-zA-Z]+( [a-zA-Z]+)*$/',
             'descripcion' => 'nullable|string',
             'duracion' => 'nullable|integer|min:1',
             'fecha_inicio' => 'nullable|date',
             'fecha_fin' => 'nullable|date|after_or_equal:fecha_inicio',
             'id_area' => 'required|exists:areas,id', // Validar que el área exista
         ], [
-            'nombre.required' => 'El campo Nombre del Curso es obligatorio.',
+            'nombre.regex' => 'El campo Nombre Solo permite letras no numeros ni caracteres.',
             'nombre.max' => 'El campo Nombre del Curso no puede tener más de 100 caracteres.',
             'duracion.integer' => 'La duración debe ser un número entero.',
             'duracion.min' => 'La duración debe ser al menos de 1 hora.',
@@ -75,14 +75,14 @@ class cursoController extends Controller
     {
         // Validar los datos enviados
         $request->validate([
-            'nombre' => 'required|max:100',
+            'nombre' => 'regex:/^[a-zA-Z]+( [a-zA-Z]+)*$/',
             'descripcion' => 'nullable|string',
             'duracion' => 'nullable|integer|min:1',
             'fecha_inicio' => 'nullable|date',
             'fecha_fin' => 'nullable|date|after_or_equal:fecha_inicio',
             'id_area' => 'required|exists:areas,id', // Validar que el área exista
         ], [
-            'nombre.required' => 'El campo Nombre del Curso es obligatorio.',
+            'nombre.regex' => 'El campo Nombre del Curso es obligatorio.',
             'nombre.max' => 'El campo Nombre del Curso no puede tener más de 100 caracteres.',
             'duracion.integer' => 'La duración debe ser un número entero.',
             'duracion.min' => 'La duración debe ser al menos de 1 hora.',
