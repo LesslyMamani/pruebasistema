@@ -1,4 +1,5 @@
 <?php
+
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -11,22 +12,18 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('cursos', function (Blueprint $table) {
-            $table->id('id_curso'); // Campo con autoincremento y llave primaria
+            $table->id('id_curso'); // ID del curso
+            $table->unsignedBigInteger('id_area')->after('estado'); // Llave foránea
+            $table->string('nombre', 100); // Nombre del curso
+            $table->text('descripcion')->nullable(); // Descripción opcional
+            $table->integer('duracion')->nullable(); // Duración en horas
+            $table->date('fecha_inicio')->nullable(); // Fecha de inicio
+            $table->date('fecha_fin')->nullable(); // Fecha de fin
+            $table->enum('estado', ['1', '0'])->default('1'); // Estado (1=activo, 0=inactivo)
+            $table->timestamps(); // Campos para created_at y updated_at
 
-            $table->unsignedBigInteger('id'); // Llave foránea
-            $table->unsignedBigInteger('id_area'); // Llave foránea
-            $table->string('nombre', 100); // Campo con longitud máxima de 100 caracteres
-            $table->text('descripcion')->nullable(); // Campo de texto opcional
-            $table->integer('duracion')->nullable(); // Duración en horas, opcional
-            $table->date('fecha_inicio')->nullable(); // Fecha de inicio opcional
-            $table->date('fecha_fin')->nullable(); // Fecha de fin opcional
-            // Definición de la llave foránea correctamente
-            $table->foreign('id')->references('id')->on('areas')->onDelete('cascade');
-            $table->integer('estado')->default(1);
-            // Definición de la llave foránea correctamente
+            // Llave foránea para el área
             $table->foreign('id_area')->references('id')->on('areas')->onDelete('cascade');
-
-            $table->timestamps(); // Campos para 'created_at' y 'updated_at'
         });
     }
 

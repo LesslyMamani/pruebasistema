@@ -37,6 +37,7 @@ class cursoController extends Controller
             'duracion' => 'nullable|integer|min:1',
             'fecha_inicio' => 'nullable|date',
             'fecha_fin' => 'nullable|date|after_or_equal:fecha_inicio',
+            'estado' => 'required|in:1,0',
             'id_area' => 'required|exists:areas,id', // Validar que el área exista
         ], [
             'nombre.required' => 'El campo Nombre del Curso es obligatorio.',
@@ -51,7 +52,7 @@ class cursoController extends Controller
         ]);
 
         // Curso::create($request->all());
-        Curso::create($request->only('nombre', 'descripcion', 'duracion', 'fecha_inicio', 'fecha_fin', 'id_area'));
+        Curso::create($request->only('nombre', 'descripcion', 'duracion', 'fecha_inicio', 'fecha_fin', 'estado', 'id_area'));
         return redirect()->route('curso')->with('success', 'Curso creado con éxito.');
     }
 
@@ -61,11 +62,7 @@ class cursoController extends Controller
     public function edit($id_curso)
 {
     $curso = Curso::findOrFail($id_curso);
-    // Filtrar solo las áreas cuyo estado no sea 0
-    $areas = Area::where('estado', '!=', 0)->get();
-
-    // Verificar qué áreas se están pasando
-    dd($areas);
+    $areas = Area::all();
 
     return view('cursos.edit', compact('curso', 'areas'));
 }
@@ -80,6 +77,7 @@ class cursoController extends Controller
             'duracion' => 'nullable|integer|min:1',
             'fecha_inicio' => 'nullable|date',
             'fecha_fin' => 'nullable|date|after_or_equal:fecha_inicio',
+            'estado' => 'required|in:1,0',
             'id_area' => 'required|exists:areas,id', // Validar que el área exista
         ], [
             'nombre.required' => 'El campo Nombre del Curso es obligatorio.',
@@ -102,7 +100,7 @@ class cursoController extends Controller
     $curso = Curso::findOrFail($id_curso);
 
     // Actualizar los datos
-    $curso->update($request->only('nombre', 'descripcion', 'duracion', 'fecha_inicio', 'fecha_fin', 'id_area'));
+    $curso->update($request->only('nombre', 'descripcion', 'duracion', 'fecha_inicio', 'fecha_fin', 'estado', 'id_area'));
 
     // Redirigir a la lista de cursos con un mensaje de éxito
     return redirect()->route('curso')->with('success', 'Curso actualizado correctamente.');

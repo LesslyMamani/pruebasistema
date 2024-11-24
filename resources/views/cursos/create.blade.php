@@ -51,6 +51,13 @@
                     <small class="text-danger">{{ $message }}</small>
                 @enderror
             </div>
+            <div class="mb-3">
+                <label for="estado" class="form-label">Estado</label>
+                <select class="form-select" id="estado" name="estado" value="{{ old('estado') }}" required>
+                    <option value="1">Activo</option>
+                    <option value="0">Inactivo</option>
+                </select>
+            </div>
 
             <!-- Selección de Área -->
             <div class="mb-3">
@@ -75,4 +82,5 @@
             </div>
         </form>
     </div>
-@endsection --}}
+@endsection 
+ --}}

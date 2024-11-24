@@ -24,6 +24,8 @@
                     <!-- Fechas de inicio y fin -->
                     <p><strong>Fecha de Inicio:</strong> {{ $curso->fecha_inicio }}</p>
                     <p><strong>Fecha de Fin:</strong> {{ $curso->fecha_fin }}</p>
+                    <p><strong>Estado:</strong> {{ $curso->estado }}</p>
+
 
                     <!-- Botón para regresar al índice -->
                     <a href="{{ route('curso.index') }}" class="btn btn-secondary">Volver a la lista de cursos</a>

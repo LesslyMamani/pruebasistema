@@ -22,6 +22,7 @@
                             <div class="nftmax-table mg-top-100">
                                 <div class="nftmax-table__heading">
                                     <h3 class="nftmax-table__title mb-0">Listado de Áreas</h3>
+                                    
                                     <!-- Botón para abrir modal -->
                                     <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#crearAreaModal">Crear Nueva Área</button>
                                 </div>
