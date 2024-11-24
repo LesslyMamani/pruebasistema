@@ -36,7 +36,6 @@
  <![endif]-->
 
     <div class="body-bg" style="background-image:url('img/body-bg.jpg')">
-
         <!-- NFTMax Welcome -->
         <section class="nftmax-wc nftmax-wc__full">
             <div class="container-fluid">
@@ -54,19 +53,21 @@
                             </div>
                             <!-- Welcome Heading -->
                             <div class="nftmax-wc__heading">
-                                <h2 class="nftmax-wc__title">Sistema de Capacitacion <br>Unidad de Tecnologias de Informacion</h2>
+                                <h2 class="nftmax-wc__title">Sistema de Capacitacion <br>Unidad de Tecnologias de
+                                    Informacion</h2>
                             </div>
 
                         </div>
                     </div>
-                    <div class="col-xxl-6 col-lg-6 col-12">
 
+                    <div class="col-xxl-6 col-lg-6 col-12">
                         <!-- Welcome Form -->
                         <div class="nftmax-wc__form">
                             <div class="nftmax-wc__form-inner">
-                                <div class="nftmax-wc__heading">
-                                    <h1 class="nftmax-wc__form-title nftmax-wc__form-title__one"
-                                        style="background-image:url('')">UTIC</h1>
+                                <div class="nftmax-wc__heading" style="text-align: center;">
+                                    <a href="#">
+                                        <img src="img/u.png" alt="#" style="width: 250px; height: auto;">
+                                    </a>
                                 </div>
                                 <!-- Sign in Form -->
                                 <form class="nftmax-wc__form-main" action="{{ route('login.store') }}" method="POST">
@@ -104,15 +105,20 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <div class="nftmax-wc__check-inline">
-                                            <div class="nftmax-wc__checkbox">
-                                                <input class="nftmax-wc__form-check" id="checkbox" name="checkbox"
-                                                    type="checkbox">
-                                                <label for="checkbox">Remember Me</label>
-                                            </div>
+                                        <div class="nftmax-wc__check-inline" style="text-align: right; margin-top: 10px;">
                                             <div class="nftmax-wc__forgot">
-                                                <a href="forgot-password.html" class="forgot-pass">Forgot
-                                                    Password?</a>
+                                                <a href="forgot-password.html"
+                                                class="forgot-pass"
+                                                style="
+                                                    font-family: 'Poppins', sans-serif;
+                                                    font-size: 1.0rem;
+                                                    color: #2575fc;
+                                                    text-decoration: none;
+                                                    font-weight: bold;
+                                                    transition: color 0.3s ease;
+                                                ">
+                                                    ¿Has olvidado tu contraseña?
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
@@ -121,6 +127,11 @@
                                             <button class="ntfmax-wc__btn" type="submit">Ingresar</button>
                                         </div>
                                     </div>
+                                    <div class="form-group">
+                                        <div class="nftmax-wc__check-inline">
+                                            <div class="nftmax-wc__forgot">
+                                                <a href="{{ route('register') }}" class="forgot-pass">¿No tienes una cuenta? Regístrate</a>
+                                            </div>
 
                                 </form>
                                 <!-- End Sign in Form -->

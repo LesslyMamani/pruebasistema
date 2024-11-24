@@ -80,7 +80,7 @@ class cursoController extends Controller
             'estado' => 'required|in:1,0',
             'id_area' => 'required|exists:areas,id', // Validar que el área exista
         ], [
-            'nombre.regex' => 'El campo Nombre del Curso es obligatorio.',
+            'nombre.regex' => 'El campo Nombre Solo permite letras no numeros ni caracteres.',
             'nombre.max' => 'El campo Nombre del Curso no puede tener más de 100 caracteres.',
             'duracion.integer' => 'La duración debe ser un número entero.',
             'duracion.min' => 'La duración debe ser al menos de 1 hora.',

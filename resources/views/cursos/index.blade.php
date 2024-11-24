@@ -37,7 +37,7 @@
                                                     <th class="nftmax-table__column-5 nftmax-table__h5">Fecha Inicio</th>
                                                     <th class="nftmax-table__column-6 nftmax-table__h6">Fecha Fin</th>
                                                     <th class="nftmax-table__column-6 nftmax-table__h6">Estado</th>
-                                                    <th class="nftmax-table__column-5 nftmax-table__h7">Acciones</th>
+                                                    <th class="nftmax-table__column-5 nftmax-table__h3">Acciones</th>
                                                 </tr>
                                             </thead>
                                             <tbody class="nftmax-table__body">
@@ -55,7 +55,7 @@
                                                             {{ $curso->fecha_inicio }}</td>
                                                         <td class="nftmax-table__column-5 nftmax-table__data-5">
                                                             {{ $curso->fecha_fin }}</td>
-                                                            <td class="nftmax-table__column-3 nftmax-table__data-3">
+                                                        <td class="nftmax-table__column-3 nftmax-table__data-3">
                                                                 {{ $curso->estado }}</td>
 
                                                         <td class="nftmax-table__column-6 nftmax-table__data-6">
@@ -72,11 +72,9 @@
                                                                     data-fecha_fin="{{ $curso->fecha_fin }}"
                                                                     data-estado="{{ $curso->estado }}"
                                                                     data-id_area="{{ $curso->id_area }}">
-                                                                    
-                                                                    <!-- Agregado id_area -->
-                                                                    Editar
-                                                                </button>
 
+                                                                    <!-- Agregado id_area -->
+                                                                    Editar</button>
                                                                 <!-- Botón Eliminar -->
                                                                 <form
                                                                     action="{{ route('curso.destroy', $curso->id_curso) }}"
@@ -117,7 +115,7 @@
 
                     <div class="mb-3">
                         <label for="id_area" class="form-label">Área</label>
-                        
+
                         <select class="form-control" id="id_area" name="id_area" required>
                             <option value="" disabled selected>Seleccione un área</option>
                             @foreach ($areas as $area)
@@ -175,7 +173,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="editarCursoModalLabel">Editar Cursoss</h5>
+                    <h5 class="modal-title" id="editarCursoModalLabel">EDITAR CURSOS</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -233,7 +231,7 @@
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
                             <button type="submit" class="btn btn-primary">Guardar Cambios</button>
                         </div>
-                        
+
                     </form>
                 </div>
             </div>

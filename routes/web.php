@@ -66,5 +66,9 @@ Route::middleware('auth')->group(function () {
   Route::get('/curso', [cursoController::class, 'index'])->name('curso');
   Route::resource('expositor', expositorController::class);
   Route::get('/expositor', [expositorController::class, 'index'])->name('expositor');
+
+
+
+
 });
 require __DIR__ . '/auth.php';
