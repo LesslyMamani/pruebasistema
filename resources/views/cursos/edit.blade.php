@@ -1,4 +1,4 @@
-{{-- @extends('dashboard.app')
+@extends('dashboard.app')
 
 @section('content')
     <div class="container mt-5">
@@ -75,6 +75,13 @@
                                     <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
                             </div>
+                            <div class="mb-3">
+                                <label for="estado" class="form-label">Estado</label>
+                                <select class="form-select" id="estado" name="estado" required>
+                                    <option value="1">Activo</option>
+                                    <option value="0">Inactivo</option>
+                                </select>
+                            </div>
 
                             <!-- Botones -->
                             <div class="d-flex justify-content-between">
@@ -87,4 +94,4 @@
             </div>
         </div>
     </div>
-@endsection --}}
+@endsection 

@@ -29,7 +29,8 @@ class UsuarioController extends Controller
     // Crear un nuevo usuario
     public function create()
     {
-        return view('usuarios.create');
+        $usuarios = Usuario::all();  // Obtén todos los usuarios (o según tu lógica)
+        return view('usuarios.create', compact('usuarios'));  // Pasa la variable usuarios a la vista
     }
 
     // Guardar un usuario
@@ -89,32 +90,17 @@ class UsuarioController extends Controller
     }
 
     // Actualizar un usuario
-    public function update(Request $request, $id_usuario)
-    {
-        $usuario = Usuario::find($id_usuario);
+// Controlador de actualización
+public function update(Request $request, $id)
+{
+    // Aquí actualizas los datos del usuario
+    $usuario = Usuario::findOrFail($id);
+    $usuario->update($request->all());
 
-        if (!$usuario) {
-            return response()->json(['mensaje' => 'Usuario no encontrado'], 404);
-        }
+    // Luego rediriges con un mensaje de éxito
+    return redirect()->route('usuarios.index')->with('success', 'Usuario actualizado correctamente');
+}
 
-        // Validar los datos de entrada
-        $request->validate([
-            'nombre' => 'string|regex:/^[A-Za-záéíóúÁÉÍÓÚüÜñÑ]+$/',
-            'apellido_p' => 'string|regex:/^[A-Za-záéíóúÁÉÍÓÚüÜñÑ]+$/',
-            'apellido_m' => 'string|regex:/^[A-Za-záéíóúÁÉÍÓÚüÜñÑ]+$/',
-            'estado' => 'in:1,0',
-            'carnet' => 'regex:/^[0-9]+$/|unique:usuarios,carnet,' . $id_usuario . ',id_usuario',
-            'expedido' => 'in:BN,CH,CB,LP,OR,PA,PT,SC,TJ',
-            'telefono' => 'nullable|string',
-            'nombre_rol' => 'in:Usuario,Expositor',
-            'nombre_area' => 'in:Docente,Administrativo,Externo,Estudiante',
-        ]);
-
-        // Actualizar el usuario
-        $usuario->update($request->all());
-        return redirect()->route('usuarios.index')->with('success', 'Usuario creado correctamente');
-        // return response()->json(['mensaje' => 'Usuario actualizado correctamente', 'usuario' => $usuario]);
-    }
 
     // Eliminar un usuario
     public function destroy($id_usuario)

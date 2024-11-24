@@ -26,8 +26,7 @@
 
                                 <!-- Tabla -->
                                 <div class="tab-content" id="myTabContent">
-                                    <div class="tab-pane fade show active" id="table_1" role="tabpanel"
-                                        aria-labelledby="table_1">
+                                    <div class="tab-pane fade show active" id="table_1" role="tabpanel" aria-labelledby="table_1">
                                         <table class="nftmax-table__main nftmax-table__main-v1">
                                             <thead class="nftmax-table__head">
                                                 <tr>
@@ -37,6 +36,7 @@
                                                     <th class="nftmax-table__column-4 nftmax-table__h4">Duración (hrs)</th>
                                                     <th class="nftmax-table__column-5 nftmax-table__h5">Fecha Inicio</th>
                                                     <th class="nftmax-table__column-6 nftmax-table__h6">Fecha Fin</th>
+                                                    <th class="nftmax-table__column-6 nftmax-table__h6">Estado</th>
                                                     <th class="nftmax-table__column-5 nftmax-table__h7">Acciones</th>
                                                 </tr>
                                             </thead>
@@ -55,6 +55,8 @@
                                                             {{ $curso->fecha_inicio }}</td>
                                                         <td class="nftmax-table__column-5 nftmax-table__data-5">
                                                             {{ $curso->fecha_fin }}</td>
+                                                            <td class="nftmax-table__column-3 nftmax-table__data-3">
+                                                                {{ $curso->estado }}</td>
 
                                                         <td class="nftmax-table__column-6 nftmax-table__data-6">
                                                             <!-- Acciones -->
@@ -68,7 +70,9 @@
                                                                     data-duracion="{{ $curso->duracion }}"
                                                                     data-fecha_inicio="{{ $curso->fecha_inicio }}"
                                                                     data-fecha_fin="{{ $curso->fecha_fin }}"
+                                                                    data-estado="{{ $curso->estado }}"
                                                                     data-id_area="{{ $curso->id_area }}">
+                                                                    
                                                                     <!-- Agregado id_area -->
                                                                     Editar
                                                                 </button>
@@ -113,6 +117,7 @@
 
                     <div class="mb-3">
                         <label for="id_area" class="form-label">Área</label>
+                        
                         <select class="form-control" id="id_area" name="id_area" required>
                             <option value="" disabled selected>Seleccione un área</option>
                             @foreach ($areas as $area)
@@ -145,6 +150,14 @@
                             <label for="fecha_fin" class="form-label">Fecha de Fin</label>
                             <input type="date" class="form-control" id="fecha_fin" name="fecha_fin"
                                 value="{{ old('fecha_fin') }}" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="estado" class="form-label">Estado</label>
+                            <select class="form-select" id="estado" name="estado" required>
+                                <option value="" disabled selected>Seleccione un estado</option>
+                                <option value="1">Activo</option>
+                                <option value="0">Inactivo</option>
+                            </select>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -183,7 +196,7 @@
                                 <option value="" disabled>Seleccione un área</option>
                                 @foreach ($areas as $area)
                                     <option value="{{ $area->id }}"
-                                        {{ old('id_area', $curso->id) == $area->id ? 'selected' : '' }}>
+                                        {{ old('id_area', $curso->id ?? '') == $area->id ? 'selected' : '' }}>
                                         {{ $area->nombre }}
 
                                     </option>
@@ -207,11 +220,20 @@
                             <label for="fecha_fin" class="form-label">Fecha de Fin</label>
                             <input type="date" class="form-control" id="fecha_fin" name="fecha_fin" required>
                         </div>
+                        <div class="mb-3">
+                            <label for="estado" class="form-label">Estado</label>
+                            <select class="form-select" id="estado" name="estado" required>
+                                <option value="" disabled selected>Seleccione un estado</option>
+                                <option value="1">Activo</option>
+                                <option value="0">Inactivo</option>
+                            </select>
+                        </div>
 
                         <div class="d-flex justify-content-between">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
                             <button type="submit" class="btn btn-primary">Guardar Cambios</button>
                         </div>
+                        
                     </form>
                 </div>
             </div>
@@ -235,6 +257,7 @@
             var duracion = button.getAttribute('data-duracion');
             var fechaInicio = button.getAttribute('data-fecha_inicio');
             var fechaFin = button.getAttribute('data-fecha_fin');
+            var estado = button.getAttribute('data-estado'); // Obtener el estado del curso
             // Este es el ID del área
 
             var modal = this;
@@ -242,7 +265,7 @@
             modal.querySelector('#duracion').value = duracion;
             modal.querySelector('#fecha_inicio').value = fechaInicio;
             modal.querySelector('#fecha_fin').value = fechaFin;
-
+            modal.querySelector('#estado').value = estado; // Selecciona el estado correcto
             // Asigna el ID del área correctamente en el select
             modal.querySelector('#id_area').value = idArea; // Establece el valor del select
 
